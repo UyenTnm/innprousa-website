@@ -28,8 +28,8 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Space Grotesk", "sans-serif"],
+        sans: ["var(--font-sans)"],
+        display: ["Google Sans", "sans - serif"],
       },
     },
   },

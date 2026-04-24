@@ -137,14 +137,14 @@ export default function CareersPage() {
               whileInView="visible"
               variants={fadeUp}
               custom={i}
-              className="flex flex-col gap-4 rounded-lg border border-border bg-card p-6 sm:flex-row sm:justify-between"
+              className="flex flex-col gap-4 rounded-lg border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   {job.title}
                 </h3>
 
-                <div className="mt-1 flex gap-3 text-sm text-muted-foreground">
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                   <span className="bg-secondary px-2 py-0.5 text-xs text-secondary-foreground rounded">
                     {job.department}
                   </span>
@@ -171,38 +171,68 @@ export default function CareersPage() {
 
       {/* TESTIMONIAL */}
       <section className="py-20">
-        <div className="container grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((item, i) => (
-            <motion.div
-              key={item.name}
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeUp}
-              custom={i}
-              className="rounded-xl border border-border bg-card p-6"
-            >
-              <p className="text-sm text-muted-foreground">“{item.quote}”</p>
+        <div className="container">
+          <div className="mb-12 max-w-xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Hear From Our Team
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              What Our Team Says
+            </h2>
+          </div>
 
-              <div className="mt-4">
-                <p className="font-semibold">{item.name}</p>
-                <p className="text-xs text-muted-foreground">{item.role}</p>
-              </div>
-            </motion.div>
-          ))}
+          <div className=" grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((item, i) => (
+              <motion.div
+                key={item.name}
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeUp}
+                custom={i}
+                className="rounded-xl border border-border bg-card p-6"
+              >
+                <p className="text-sm text-muted-foreground">“{item.quote}”</p>
+
+                <div className="mt-4 flex items-center gap-3">
+                  {/* Avatar */}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white font-semibold">
+                    {item.name.charAt(0)}
+                  </div>
+
+                  {/* Info */}
+                  <div>
+                    <p className="font-semibold">{item.name}</p>
+                    <p className="text-xs text-muted-foreground">{item.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* BENEFITS */}
       <section className="surface-subtle py-20">
-        <div className="container grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((b) => (
-            <div
-              key={b}
-              className="rounded-lg border border-border bg-card p-5 text-sm"
-            >
-              {b}
-            </div>
-          ))}
+        <div className="container">
+          <div className="mb-8">
+            <p className="text-sm uppercase tracking-widest text-primary font-semibold">
+              Why InnPro
+            </p>
+            <h2 className="font-display text-3xl font-bold text-foreground">
+              Benefits & Culture
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((b) => (
+              <div
+                key={b}
+                className="rounded-lg border border-border bg-card p-5 text-sm"
+              >
+                {b}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

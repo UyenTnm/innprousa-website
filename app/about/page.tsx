@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Target, Eye, Lightbulb, ArrowRight } from "lucide-react";
 import { fadeUp } from "@/lib/animations";
+import TeamSection from "@/components/team/TeamSection";
 
 /* =========================
    VALUES (Adjusted to match company tone)
@@ -161,6 +162,11 @@ const About = () => (
         </motion.div>
       </div>
     </section>
+
+    {/* =========================
+        TEAM
+    ========================= */}
+    <TeamSection />
 
     {/* =========================
         VALUES
