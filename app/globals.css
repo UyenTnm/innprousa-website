@@ -125,3 +125,9 @@
     padding-right: 2rem;
   }
 }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}

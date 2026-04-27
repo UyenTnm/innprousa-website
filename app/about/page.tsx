@@ -92,7 +92,7 @@ const About = () => (
           variants={fadeUp}
           className="max-w-2xl"
         >
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-medium">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
             About InnPro
           </p>
 
@@ -135,6 +135,10 @@ const About = () => (
             consistent, functional ingredients that support product innovation
             and large-scale production.
           </p>
+
+          <div className="border-l-4 border-primary pl-4 italic text-muted-foreground">
+            Delivering consistency at scale for global food manufacturers.
+          </div>
 
           <p className="text-muted-foreground leading-relaxed">
             We combine expertise in food science, processing technology, and
@@ -249,9 +253,9 @@ const About = () => (
               viewport={{ once: true }}
               custom={i}
               variants={fadeUp}
-              className="flex gap-4 rounded-lg border border-border bg-card p-6"
+              className="flex gap-4 rounded-lg border bg-card p-6 border-l-4 border-primary transition hover:shadow-lg hover:-translate-y-1"
             >
-              <span className="font-display text-2xl font-bold text-primary">
+              <span className="text-xl font-bold text-primary min-w-[60px]">
                 {t.year}
               </span>
 
@@ -270,7 +274,7 @@ const About = () => (
     <section className="hero-gradient py-16">
       <div className="container text-center">
         <h2 className="mb-4 font-display text-3xl font-bold text-primary-foreground">
-          Work With InnPro
+          Start Your Next Product with InnPro
         </h2>
 
         <p className="mb-6 text-primary-foreground/80">

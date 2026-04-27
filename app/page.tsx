@@ -20,6 +20,11 @@ import ApplicationSlider from "@/components/sliders/ApplicationSlider";
 import WhyInnproSection from "@/components/whychooseinnpro/WhyInnproSection";
 import ManufacturingSection from "@/components/manufacturing/ManufacturingSection";
 import MapSection from "@/components/MapSection/MapSection";
+import HeroSection from "@/components/heroSection/HeroSection";
+import ProblemSection from "@/components/home/ProblemSection";
+import SolutionSection from "@/components/home/SolutionSection";
+import TechnologySection from "@/components/home/TechnologySection";
+import ProductPreviewSection from "@/components/home/ProductPreviewSection";
 
 const slides = [
   {
@@ -39,83 +44,41 @@ const slides = [
   },
 ];
 
-const stats = [
-  { value: "15+", label: "Years in Plant Protein" },
-  { value: "200+", label: "Formulations Delivered" },
-  { value: "50K", label: "MT Annual Capacity" },
-  { value: "98.5%", label: "Batch Consistency" },
-];
+// const stats = [
+//   { value: "15+", label: "Years in Plant Protein" },
+//   { value: "200+", label: "Formulations Delivered" },
+//   { value: "50K", label: "MT Annual Capacity" },
+//   { value: "98.5%", label: "Batch Consistency" },
+// ];
 
-const problems = [
-  {
-    icon: Beaker,
-    title: "Inconsistent Protein Quality",
-    description:
-      "Batch-to-batch variation disrupts your formulation timelines and final product consistency.",
-  },
-  {
-    icon: Factory,
-    title: "Scaling Challenges",
-    description:
-      "Moving from pilot to full production requires a partner with proven manufacturing infrastructure.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Regulatory Complexity",
-    description:
-      "Navigating global food safety certifications demands deep technical and regulatory expertise.",
-  },
-];
-
-const solutions = [
-  {
-    icon: FlaskConical,
-    title: "Precision-Engineered Ingredients",
-    description:
-      "Every batch meets strict protein content, solubility, and functionality specifications.",
-  },
-  {
-    icon: Zap,
-    title: "Scalable Manufacturing",
-    description:
-      "From 100kg samples to 50,000 MT annually — our facility scales with your growth.",
-  },
-  {
-    icon: Leaf,
-    title: "Sustainable Sourcing",
-    description:
-      "Traceable supply chains with verified sustainability credentials at every stage.",
-  },
-  {
-    icon: BarChart3,
-    title: "Technical Partnership",
-    description:
-      "Dedicated R&D support from concept through commercialization for every customer.",
-  },
-];
-
-const products = [
-  {
-    name: "Pea Protein Isolate",
-    protein: "85%+",
-    applications: "Beverages, Bars, Meat Analogues",
-  },
-  {
-    name: "Rice Protein Concentrate",
-    protein: "80%+",
-    applications: "Baking, Snacks, Nutrition Powders",
-  },
-  {
-    name: "Faba Bean Protein",
-    protein: "60%+",
-    applications: "Dairy Alternatives, Sauces",
-  },
-  {
-    name: "Blended Systems",
-    protein: "Custom",
-    applications: "Tailored for Your Application",
-  },
-];
+// const products = [
+//   {
+//     name: "Pea Protein Isolate",
+//     protein: "85%+",
+//     applications: "Beverages, Bars, Meat Analogues",
+//   },
+//   {
+//     name: "Rice Protein Concentrate",
+//     protein: "80%+",
+//     applications: "Baking, Snacks, Nutrition Powders",
+//   },
+//   {
+//     name: "Faba Bean Protein",
+//     protein: "60%+",
+//     applications: "Dairy Alternatives, Sauces",
+//   },
+//   {
+//     name: "Blended Systems",
+//     protein: "Custom",
+//     applications: "Tailored for Your Application",
+//   },
+//   {
+//     name: "Profectein® Isolate",
+//     protein: "90%",
+//     applications: "Beverages, Nutrition",
+//     benefits: ["High solubility", "Neutral taste", "Low viscosity"],
+//   },
+// ];
 
 const Index = () => {
   const [index, setIndex] = useState(0);
@@ -129,8 +92,8 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className=" relative overflow-hidden min-h-[80vh] flex items-center">
-        {/* Background */}
+      <HeroSection />
+      {/* <section className=" relative overflow-hidden min-h-[80vh] flex items-center">
 
         <div className="absolute inset-0">
           <Image
@@ -143,7 +106,6 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
-        {/* Content */}
         <div className="container relative z-10">
           <div className="max-w-xl md:max-w-2xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
@@ -170,7 +132,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Dots */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
           {slides.map((_, i) => (
             <button
@@ -182,10 +143,10 @@ const Index = () => {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Stats */}
-      <section className="border-b border-border bg-card">
+      {/* <section className="border-b border-border bg-card">
         <div className="container grid grid-cols-2 gap-8 py-12 md:grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div
@@ -206,10 +167,10 @@ const Index = () => {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Problem */}
-      <section className="py-20 md:py-28">
+      {/* <section className="py-20 md:py-28">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -250,10 +211,11 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <ProblemSection />
 
       {/* Solution */}
-      <section className="surface-subtle py-20 md:py-28">
+      {/* <section className="surface-subtle py-20 md:py-28">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -294,11 +256,11 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <SolutionSection />
 
       {/* Profectein Technology */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        {/* VIDEO BACKGROUND */}
+      {/* <section className="relative py-20 md:py-28 overflow-hidden">
         <video
           autoPlay
           loop
@@ -309,12 +271,9 @@ const Index = () => {
           <source src="/videos/protein-platform-video.mp4" type="video/mp4" />
         </video>
 
-        {/* LIGHT OVERLAY (phù hợp logo đen) */}
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[4px]" />
 
-        {/* CONTENT */}
         <div className="relative z-10 container text-center max-w-3xl text-gray-900">
-          {/* LOGO */}
           <div className="mb-8 flex justify-center">
             <Image
               src="/images/pro1.png"
@@ -326,19 +285,16 @@ const Index = () => {
             />
           </div>
 
-          {/* TITLE */}
           <h2 className="mb-6 text-3xl md:text-4xl font-bold leading-tight">
             Pea Protein Platform Engineered for Performance
           </h2>
 
-          {/* DESC */}
           <p className="mb-10 max-w-2xl mx-auto text-gray-700 leading-relaxed">
             Developed using proprietary processing technologies, delivering
             superior solubility, clean taste profile, and scalable performance
             across diverse food and beverage applications.
           </p>
 
-          {/* ADVANTAGES */}
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               "High Functionality",
@@ -355,15 +311,15 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <TechnologySection />
 
       {/* Application Sliders */}
       <ApplicationSlider />
 
       {/* Products Preview */}
-      <section className="surface-subtle py-20 md:py-28">
+      {/* <section className="surface-subtle py-20 md:py-28">
         <div className="container">
-          {/* HEADER */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -382,7 +338,6 @@ const Index = () => {
             </div>
           </motion.div>
 
-          {/* PRODUCT GRID */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((product, i) => (
               <motion.div
@@ -403,6 +358,11 @@ const Index = () => {
                 <p className="mb-3 text-2xl font-bold text-primary">
                   {product.protein}
                 </p>
+                <ul className="mb-3 space-y-1 text-xs text-muted-foreground">
+                  {product.benefits?.map((b) => (
+                    <li key={b}>• {b}</li>
+                  ))}
+                </ul>
 
                 <p className="text-xs text-muted-foreground">
                   {product.applications}
@@ -416,80 +376,18 @@ const Index = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
+      <ProductPreviewSection />
 
       {/* Why InnPro Section */}
       <WhyInnproSection />
 
       {/* Manufacturing */}
-      {/* <section className="surface-subtle py-20 md:py-28">
-        <div className="container">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={0}
-              variants={fadeUp}
-            >
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
-                Manufacturing
-              </p>
-              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-4xl">
-                Purpose-Built for Plant Protein
-              </h2>
-              <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>
-                  Our facility is designed exclusively for plant-based protein
-                  processing — no cross-contamination risks, no shared lines, no
-                  compromises.
-                </p>
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {[
-                    "ISO 22000 Certified",
-                    "FSSC 22000 Compliant",
-                    "Allergen-Free Facility",
-                    "Halal & Kosher Ready",
-                    "Automated QC Systems",
-                    "Full Traceability",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <ShieldCheck className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span className="text-foreground font-medium">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Button variant="cta" className="mt-8" asChild>
-                <Link href="/about">Explore Our Capabilities</Link>
-              </Button>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={1}
-              variants={fadeUp}
-              className="overflow-hidden rounded-lg"
-            >
-              <Image
-                src="/images/manufacturing.png"
-                alt="InnPro manufacturing facility"
-                width={800}
-                height={500}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section> */}
       <ManufacturingSection />
 
       {/* Map */}
       <MapSection />
-      
+
       {/* CTA */}
       <section className="hero-gradient py-20 md:py-28">
         <div className="container text-center">
@@ -502,11 +400,11 @@ const Index = () => {
             className="mx-auto max-w-2xl"
           >
             <h2 className="mb-4 font-display text-3xl font-bold text-primary-foreground md:text-4xl">
-              Ready to Develop Your Next Product?
+              Start Your Next Formulation with Confidence
             </h2>
             <p className="mb-8 text-lg text-primary-foreground/80">
-              Get samples, technical specifications, and formulation support
-              from our team.
+              Get samples, detailed specifications, and direct support from our
+              formulation experts to accelerate your product development.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="lg" asChild>
@@ -515,6 +413,9 @@ const Index = () => {
               <Button variant="hero-outline" size="lg" asChild>
                 <Link href="/contact">Talk to Our Team</Link>
               </Button>
+              <p className="mt-6 text-sm text-primary-foreground/60">
+                Trusted by global food and nutrition manufacturers
+              </p>
             </div>
           </motion.div>
         </div>

@@ -28,7 +28,7 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ["var(--font-sans)"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         display: ["Google Sans", "sans - serif"],
       },
     },

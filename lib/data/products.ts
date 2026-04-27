@@ -1,5 +1,6 @@
 export type Product = {
   id: string;
+  slug: string;
   name: string;
   protein: string;
   source: string;
@@ -13,6 +14,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "profectin-1-0",
+    slug: "profectein-1-0",
     name: "PROFECTEIN™ 1.0",
     protein: "Core Performance Grade",
     source: "Pea Protein",
@@ -28,6 +30,7 @@ export const products: Product[] = [
   },
   {
     id: "profectin-1-5",
+    slug: "profectin-1-5",
     name: "PROFECTEIN™ 1.5",
     protein: "Enhanced Nutritional Grade",
     source: "Pea Protein",
@@ -51,6 +54,7 @@ export const products: Product[] = [
   },
   {
     id: "rice-protein-sg2",
+    slug: "rice-protein-sg2",
     name: "Rice Protein SG-II",
     protein: "Specialty Rice Protein",
     source: "Rice",
@@ -70,6 +74,7 @@ export const products: Product[] = [
   },
   {
     id: "oatmilk",
+    slug: "oatmilk",
     name: "Oat Milk Powder",
     protein: "Non-Dairy Oat Base",
     source: "Oat",

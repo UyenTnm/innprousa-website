@@ -46,10 +46,28 @@ export default function ManufacturingSection() {
               consistent, high-performance output at scale.
             </p>
 
+            <div className="flex gap-6 text-sm mb-6">
+              <div>
+                <p className="font-bold text-primary text-lg">50K MT</p>
+                <p className="text-muted-foreground">Annual Capacity</p>
+              </div>
+              <div>
+                <p className="font-bold text-primary text-lg">24/7</p>
+                <p className="text-muted-foreground">Production</p>
+              </div>
+              <div>
+                <p className="font-bold text-primary text-lg">100%</p>
+                <p className="text-muted-foreground">Traceability</p>
+              </div>
+            </div>
+
             {/* CERTIFICATIONS */}
             <ul className="grid gap-3 sm:grid-cols-2 mb-8">
               {certifications.map((item) => (
-                <li key={item} className="flex items-center gap-2">
+                <li
+                  key={item}
+                  className="flex items-center gap-2 bg-white px-3 py-2 rounded-md border"
+                >
                   <ShieldCheck className="h-4 w-4 text-primary flex-shrink-0" />
                   <span className="text-sm font-medium text-foreground">
                     {item}
@@ -60,7 +78,7 @@ export default function ManufacturingSection() {
 
             {/* CTA */}
             <Button variant="cta" asChild>
-              <Link href="/about">Explore Our Capabilities</Link>
+              <Link href="/about">Request Samples & Specs</Link>
             </Button>
           </motion.div>
 
@@ -78,10 +96,15 @@ export default function ManufacturingSection() {
               loop
               muted
               playsInline
+              preload="none"
+              poster="/images/manufacturing.png"
               className="w-full h-full object-cover"
             >
               <source src="/videos/factory-demo.mp4" type="video/mp4" />
             </video>
+            <div className="absolute bottom-4 left-4 text-white text-sm bg-black/40 px-3 py-1 rounded-md backdrop-blur-sm">
+              Dong Nai Manufacturing Facility
+            </div>
             {/* OVERLAY */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />{" "}
           </motion.div>

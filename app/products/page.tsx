@@ -47,15 +47,16 @@ export default function ProductsPage() {
             {products.map((product) => (
               <motion.div
                 key={product.id}
+                id={product.slug}
                 variants={fadeUp}
-                className="will-change-transform"
+                className="scroll-mt-28 will-change-transform"
               >
                 <div className="grid gap-8 rounded-lg border border-border bg-card p-8 md:grid-cols-3 transition hover:shadow-lg cursor-pointer">
                   {/* LEFT */}
                   <div className="md:col-span-2">
                     <div className="mb-1 h-1 w-12 rounded-full bg-accent" />
 
-                    <h2 className="mt-3 font-display text-2xl font-bold">
+                    <h2 className="mt-3 font-display text-2xl md:text-3xl font-bold text-foreground">
                       {product.name}
                     </h2>
 
@@ -65,7 +66,7 @@ export default function ProductsPage() {
                       </span>
                     )}
 
-                    <p className="text-sm text-primary font-semibold">
+                    <p className="text-lg font-bold text-primary mt-2">
                       {product.protein}
                     </p>
 
@@ -83,6 +84,15 @@ export default function ProductsPage() {
                           <span>{item}</span>
                         </div>
                       ))}
+                    </div>
+
+                    <div className="mt-4 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                      <span className="bg-muted px-2 py-1 rounded">
+                        High solubility
+                      </span>
+                      <span className="bg-muted px-2 py-1 rounded">
+                        Neutral taste
+                      </span>
                     </div>
 
                     <div className="mt-6">
@@ -105,7 +115,7 @@ export default function ProductsPage() {
 
                   {/* RIGHT */}
                   <div className="flex flex-col gap-4">
-                    <div className="relative w-full h-[260px] overflow-hidden rounded-lg">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
                       <Image
                         src={product.image}
                         alt={product.name}
@@ -118,6 +128,9 @@ export default function ProductsPage() {
                     <Button variant="cta" className="w-full" asChild>
                       <Link href="/contact">Request Sample</Link>
                     </Button>
+                    {/* <Button variant="outline" className="w-full" asChild>
+                      <Link href="#">Download Specs</Link>
+                    </Button> */}
                   </div>
                 </div>
               </motion.div>
