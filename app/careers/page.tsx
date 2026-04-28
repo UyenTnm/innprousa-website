@@ -112,7 +112,7 @@ export default function CareersPage() {
             variants={fadeUp}
             className="max-w-2xl"
           >
-            <p className="mb-2 text-sm font-semibold uppercase text-accent-medium">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
               Careers
             </p>
 

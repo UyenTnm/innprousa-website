@@ -20,7 +20,7 @@ export default function ProductsPage() {
             variants={fadeUp}
             className="max-w-2xl"
           >
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-medium">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
               Product Catalog
             </p>
             <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">

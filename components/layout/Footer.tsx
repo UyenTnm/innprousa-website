@@ -47,7 +47,7 @@ const Footer = () => (
             </li>
             <li>
               <Link
-                href="/contact"
+                href="/contact?type=sample"
                 className="hover:text-primary transition-colors"
               >
                 Request a Sample

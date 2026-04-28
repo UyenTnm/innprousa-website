@@ -408,7 +408,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="lg" asChild>
-                <Link href="/contact">Request a Sample</Link>
+                <Link href="/contact?type=sample">Request a Sample</Link>
               </Button>
               <Button variant="hero-outline" size="lg" asChild>
                 <Link href="/contact">Talk to Our Team</Link>

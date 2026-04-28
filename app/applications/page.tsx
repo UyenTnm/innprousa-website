@@ -74,7 +74,7 @@ export default function ApplicationsPage() {
             variants={fadeUp}
             className="max-w-2xl"
           >
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-medium">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
               Applications
             </p>
 

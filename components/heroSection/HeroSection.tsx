@@ -110,7 +110,7 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-4">
               <Button variant="cta" size="lg" asChild>
-                <Link href="/contact">Request Samples</Link>
+                <Link href="/contact?type=sample">Request Samples</Link>
               </Button>
 
               <Button variant="hero-outline" size="lg" asChild>

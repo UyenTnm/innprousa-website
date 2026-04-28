@@ -57,7 +57,7 @@ export default function Header() {
             className="bg-secondary text-white hover:bg-[#5A8E36]"
             asChild
           >
-            <Link href="/contact">Request a Sample</Link>
+            <Link href="/contact?type=sample">Request a Sample</Link>
           </Button>
         </div>
 
@@ -90,7 +90,10 @@ export default function Header() {
             ))}
 
             <Button variant="cta" className="mt-2" asChild>
-              <Link href="/contact" onClick={() => setMobileOpen(false)}>
+              <Link
+                href="/contact?type=sample"
+                onClick={() => setMobileOpen(false)}
+              >
                 Request a Sample
               </Link>
             </Button>
