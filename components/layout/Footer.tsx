@@ -97,7 +97,7 @@ const Footer = () => (
           </h4>
 
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>info@innpro.com</li>
+            <li>info@innprousa.com</li>
             <li>+1 (555) 234-5678</li>
             <li>
               <Link

@@ -1,95 +1,261 @@
-import { useState } from "react";
+"use client";
 
-type ApplyModalProps = {
-  onClose: () => void;
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+type Job = {
+  title: string;
 };
 
-const ApplyModal = ({ onClose }: ApplyModalProps) => {
+export default function ApplyModal({
+  job,
+  onClose,
+}: {
+  job?: Job;
+  onClose: () => void;
+}) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    company: "",
+    message: "",
+  });
+
+  const [file, setFile] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // ✅ validate file
+  const handleFileChange = (file: File | null) => {
+    if (!file) return;
 
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 500);
+    const allowedTypes = [
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only PDF or DOC files are allowed");
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      alert("File must be under 5MB");
+      return;
+    }
+
+    setFile(file);
   };
 
+  // ✅ upload Cloudinary
+  const uploadToCloudinary = async (file: File) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "innpro-cv-upload");
+    formData.append("resource_type", "raw");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dkyg9lnnd/raw/upload",
+      {
+        method: "POST",
+        body: formData,
+      },
+    );
+
+    const data = await res.json();
+
+    console.log("Cloudinary response:", data);
+
+    if (!data.secure_url) {
+      console.error("Cloudinary FULL ERROR:", data); // 👈 QUAN TRỌNG
+      throw new Error(data.error?.message || "Upload failed");
+    }
+
+    const url = data.secure_url.replace("/upload/", "/upload/fl_attachment/");
+    return url;
+  };
+
+  // submit
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!file) {
+      alert("Please upload your CV");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // 👉 upload CV trước
+      const cvUrl = await uploadToCloudinary(file);
+
+      // 👉 gửi data
+      await fetch("/api/career", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+          position: job?.title,
+          cv: cvUrl,
+        }),
+      });
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ✅ auto close (optional nhưng xịn)
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => {
+        onClose();
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitted, onClose]);
+
+  // ✅ SUCCESS UI
+  if (submitted) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+        <div className="bg-white rounded-2xl p-8 text-center shadow-xl max-w-md w-full">
+          <h2 className="text-xl font-bold mb-2">Application received 🎉</h2>
+
+          <p className="text-muted-foreground">
+            Our team will review your profile and contact you shortly.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // ✅ MAIN UI
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="bg-white w-full max-w-lg rounded-xl shadow-xl p-6 relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+      <div className="relative w-full max-w-xl rounded-2xl bg-white p-8 shadow-2xl">
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-gray-500 hover:text-black"
+          className="absolute right-4 top-4 text-gray-400 hover:text-black"
         >
           ✕
         </button>
 
-        {submitted ? (
-          <div className="text-center py-10">
-            <h2 className="text-2xl font-bold text-primary">
-              Application Submitted
-            </h2>
+        {/* Header */}
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold">
+            Apply for {job?.title || "this position"}
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            Takes less than 1 minute. Our team will review and get back to you.
+          </p>
+        </div>
 
-            <p className="mt-3 text-muted-foreground">
-              Thank you for your interest. Our team will review your application
-              and contact you soon.
-            </p>
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Name + Email */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Input
+              placeholder="Full Name *"
+              required
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+            />
 
-            <button
-              onClick={onClose}
-              className="mt-6 px-6 py-2 bg-primary text-white rounded-md"
-            >
-              Close
-            </button>
+            <Input
+              type="email"
+              placeholder="Email *"
+              required
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+            />
           </div>
-        ) : (
-          <>
-            <h2 className="text-xl font-semibold text-foreground">Apply Now</h2>
 
-            <p className="text-sm text-muted-foreground mb-4">
-              Submit your information and we’ll get in touch.
+          {/* Phone */}
+          <Input
+            placeholder="Phone (optional)"
+            value={form.phone}
+            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+          />
+
+          {/* LinkedIn */}
+          <Input
+            placeholder="LinkedIn (optional)"
+            value={form.linkedin}
+            onChange={(e) => setForm({ ...form, linkedin: e.target.value })}
+          />
+
+          {/* Company */}
+          <Input
+            placeholder="Current Company (optional)"
+            value={form.company}
+            onChange={(e) => setForm({ ...form, company: e.target.value })}
+          />
+
+          {/* Message */}
+          <Textarea
+            placeholder="What interests you about this role? (optional)"
+            value={form.message}
+            onChange={(e) => setForm({ ...form, message: e.target.value })}
+          />
+
+          {/* Upload */}
+          <div className="border-2 border-dashed rounded-xl p-5 text-center">
+            <p className="text-sm text-muted-foreground mb-2">
+              Upload your CV (PDF, DOC)
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                placeholder="Full Name"
-                className="w-full border border-border rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+            <input
+              type="file"
+              accept=".pdf,.doc,.docx"
+              onChange={(e) => handleFileChange(e.target.files?.[0] || null)}
+            />
 
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full border border-border rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+            {file ? (
+              <p className="text-sm mt-2 text-green-600">
+                ✓ {file.name} ready to upload
+              </p>
+            ) : (
+              <p className="text-sm mt-2 text-muted-foreground">
+                No file selected
+              </p>
+            )}
+          </div>
 
-              <input
-                placeholder="Phone"
-                className="w-full border border-border rounded-md p-3"
-              />
+          {/* Loading hint */}
+          {loading && (
+            <p className="text-sm text-blue-500 text-center">
+              Uploading CV & submitting...
+            </p>
+          )}
 
-              <input
-                placeholder="LinkedIn Profile"
-                className="w-full border border-border rounded-md p-3"
-              />
-
-              <input type="file" className="w-full text-sm" />
-
-              <textarea
-                placeholder="Message"
-                className="w-full border border-border rounded-md p-3 h-24"
-              />
-
-              <button className="w-full bg-primary text-white py-3 rounded-md font-medium hover:opacity-90 transition">
-                Submit Application
-              </button>
-            </form>
-          </>
-        )}
+          {/* Submit */}
+          <Button
+            type="submit"
+            className="w-full h-11 text-base font-semibold"
+            disabled={loading}
+          >
+            {loading ? "Submitting..." : "Apply Now"}
+          </Button>
+        </form>
       </div>
     </div>
   );
-};
-
-export default ApplyModal;
+}

@@ -1,3 +1,8 @@
+type Benefits = {
+  text: string;
+  highlight?: boolean;
+};
+
 export type Product = {
   id: string;
   slug: string;
@@ -5,7 +10,7 @@ export type Product = {
   protein: string;
   source: string;
   description: string;
-  benefits: string[];
+  benefits: Benefits[];
   applications: string[];
   image: string;
   badge?: string;
@@ -21,12 +26,19 @@ export const products: Product[] = [
     description:
       "A versatile, high-functionality pea protein for broad application across food and beverage systems.",
     benefits: [
-      "Balanced texture, solubility & nutrition",
-      "Commercial quantities available",
-      "Reliable across standard formulations",
+      { text: "Balanced texture, solubility & nutrition" },
+      { text: "Commercial quantities available" },
+      { text: "Reliable across standard formulations" },
     ],
-    applications: ["Beverages", "Food systems", "General applications"],
-    image: "/images/products/pea-protein-powder.jpg",
+    applications: [
+      "Ready-to-Drink",
+      "Ready-to-Mix",
+      "Meal replacements",
+      "Protein beverages",
+      "Sports nutrition",
+      "Non-dairy (milk, yogurt, ice cream)",
+    ],
+    image: "/images/products/profectein1-0.png",
   },
   {
     id: "profectin-1-5",
@@ -38,9 +50,14 @@ export const products: Product[] = [
     description:
       "Same clean taste profile as 1.0, with significantly improved protein quality and amino acid composition.",
     benefits: [
-      "PDCAAS up to 0.95 – 1.0",
-      "Enhanced digestibility & amino acid profile",
-      "Developed using patented processing",
+      {
+        text: "PDCAAS up to 0.95 – 1.0",
+        highlight: true,
+      },
+      { text: "Enhanced digestibility & amino acid profile" },
+      {
+        text: "Developed using patented processing",
+      },
     ],
     applications: [
       "Ready-to-Drink",
@@ -61,8 +78,8 @@ export const products: Product[] = [
     description:
       "Specialty rice protein engineered for suspension, solubility, improved texture, and enhanced drinkability.",
     benefits: [
-      "Designed for beverage systems and nutrition bars",
-      "Suitable for allergen-sensitive formulations",
+      { text: "Designed for beverage systems and nutrition bars" },
+      { text: "Suitable for allergen-sensitive formulations" },
     ],
     applications: [
       "Ready-To-Drink Beverages",
@@ -81,9 +98,9 @@ export const products: Product[] = [
     description:
       "Non-dairy oat powders produced through enzymatic processing to preserve nutritional integrity and functional performance.",
     benefits: [
-      "Organic & gluten-free",
-      "Adjustable sugar (<3% to >20%)",
-      "High solubility & stability",
+      { text: "Organic & gluten-free" },
+      { text: "Adjustable sugar (<3% to >20%)" },
+      { text: "High solubility & stability" },
     ],
     applications: [
       "Ready-To-Drink Beverages",

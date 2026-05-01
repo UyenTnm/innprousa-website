@@ -77,11 +77,19 @@ export default function ProductsPage() {
                     <div className="mt-4 space-y-2">
                       {product.benefits?.map((item) => (
                         <div
-                          key={item}
+                          key={item.text}
                           className="flex items-start gap-2 text-sm"
                         >
                           <span className="text-green-500">✔</span>
-                          <span>{item}</span>
+                          <span
+                            className={
+                              item.highlight
+                                ? "font-semibold text-green-700 bg-green-100 px-2 py-1 rounded"
+                                : "text-muted-foreground"
+                            }
+                          >
+                            {item.text}
+                          </span>
                         </div>
                       ))}
                     </div>
