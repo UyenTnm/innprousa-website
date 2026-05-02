@@ -1,40 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight, MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, ArrowRight } from "lucide-react";
 import { fadeUp } from "@/lib/animations";
-
-import ApplyModal from "@/components/careers/ApplyModal";
-
-const openings = [
-  {
-    title: "Senior Food Scientist",
-    department: "R&D",
-    location: "Netherlands",
-    type: "Full-Time",
-  },
-  {
-    title: "Process Engineer",
-    department: "Manufacturing",
-    location: "Netherlands",
-    type: "Full-Time",
-  },
-  {
-    title: "Business Development Manager",
-    department: "Sales",
-    location: "Remote (EU)",
-    type: "Full-Time",
-  },
-  {
-    title: "Supply Chain Coordinator",
-    department: "Operations",
-    location: "Netherlands",
-    type: "Full-Time",
-  },
-];
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { jobs } from "@/lib/data/jobs";
+import { useRouter } from "next/navigation";
 
 const benefits = [
   "401k",
@@ -99,8 +72,7 @@ const testimonials = [
 ];
 
 export default function CareersPage() {
-  const [open, setOpen] = useState(false);
-
+  const router = useRouter();
   return (
     <>
       {/* HERO */}
@@ -128,19 +100,25 @@ export default function CareersPage() {
       </section>
 
       {/* JOB LIST */}
+      {/* JOB LIST */}
       <section className="py-20">
         <div className="container space-y-4">
-          {openings.map((job, i) => (
+          {jobs.map((job, i) => (
             <motion.div
-              key={job.title}
+              key={job.slug}
               initial="hidden"
               whileInView="visible"
               variants={fadeUp}
               custom={i}
-              className="flex flex-col gap-4 rounded-lg border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between"
+              onClick={() => router.push(`/careers/${job.slug}`)}
+              className="group flex flex-col gap-4 rounded-lg border border-border bg-card p-6 
+        sm:flex-row sm:items-center sm:justify-between
+        transition-all duration-300 
+        hover:shadow-lg hover:-translate-y-1 hover:border-primary/40 
+        cursor-pointer"
             >
               <div>
-                <h3 className="font-display text-lg font-semibold text-foreground">
+                <h3 className="font-display text-lg font-semibold text-foreground transition group-hover:text-primary">
                   {job.title}
                 </h3>
 
@@ -161,9 +139,16 @@ export default function CareersPage() {
                 </div>
               </div>
 
-              <Button variant="cta" onClick={() => setOpen(true)}>
-                Apply Now <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
+              {/* Button   */}
+              <Link
+                href={`/careers/${job.slug}`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Button variant="cta">
+                  View Details
+                  <ArrowRight className="ml-1 h-4 w-4 transition group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -237,11 +222,11 @@ export default function CareersPage() {
       </section>
 
       {/* MODAL */}
-      {open && (
+      {/* {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <ApplyModal onClose={() => setOpen(false)} />
         </div>
-      )}
+      )} */}
     </>
   );
 }
