@@ -83,32 +83,49 @@ const About = () => (
     {/* =========================
         HERO
     ========================= */}
-    <section className="hero-gradient py-20 md:py-28">
-      <div className="container">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          custom={0}
-          variants={fadeUp}
-          className="max-w-2xl"
-        >
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
-            About InnPro
-          </p>
+    <section
+      className="
+    relative 
+    min-h-[55vh] 
+    sm:min-h-[60vh] 
+    md:min-h-[65vh] 
+    lg:min-h-[70vh] 
+    flex items-center
+    text-white 
+    overflow-hidden
+  "
+    >
+      {/* BACKGROUND IMAGE */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/about/bg-about.jpeg"
+          alt="InnPro manufacturing facility"
+          fill
+          className="object-cover object-center md:object-[center_30%]"
+          priority
+        />
+      </div>
 
-          <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
-            A Trusted Partner in Plant-Based Protein Ingredients
-          </h1>
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-black/60" />
 
-          <p className="text-lg text-primary-foreground/80">
-            InnPro is a manufacturer of plant-based protein ingredients,
-            supporting food companies with reliable, scalable, and high-quality
-            solutions.
-          </p>
-        </motion.div>
+      {/* CONTENT */}
+      <div className="relative z-10 container max-w-3xl text-left">
+        <p className="uppercase text-sm tracking-widest opacity-80">
+          About InnPro
+        </p>
+
+        <h1 className="text-4xl md:text-5xl font-bold mt-3">
+          A Trusted Partner in Plant-Based Protein Ingredients
+        </h1>
+
+        <p className="mt-4 opacity-90 max-w-xl leading-relaxed">
+          InnPro develops high-performance plant-based protein ingredients
+          through advanced processing technologies, supporting food
+          manufacturers with reliable, scalable, and consistent solutions.
+        </p>
       </div>
     </section>
-
     {/* =========================
         MISSION / ABOUT CONTENT
     ========================= */}

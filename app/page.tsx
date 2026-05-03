@@ -312,6 +312,7 @@ const Index = () => {
           </div>
         </div>
       </section> */}
+      {/* BRANDING SECTION */}
       <TechnologySection />
 
       {/* Application Sliders */}

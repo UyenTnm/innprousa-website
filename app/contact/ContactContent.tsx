@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { fadeUp } from "@/lib/animations";
+import Image from "next/image";
 
 export default function ContactContent() {
   const searchParams = useSearchParams();
@@ -85,28 +86,47 @@ export default function ContactContent() {
   return (
     <>
       {/* HERO */}
-      <section className="hero-gradient py-20 md:py-28">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-2xl"
-          >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
-              {type === "sample" ? "Request Sample" : "Contact"}
-            </p>
+      <section
+        className="
+    relative 
+    min-h-[55vh] 
+    sm:min-h-[60vh] 
+    md:min-h-[65vh] 
+    lg:min-h-[70vh] 
+    flex items-center
+    text-white 
+    overflow-hidden
+  "
+      >
+        {/* BACKGROUND IMAGE */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/contact/bg-contact.jpeg"
+            alt="Contact InnPro"
+            fill
+            className="object-cover object-center md:object-[center_30%]"
+            priority
+          />
+        </div>
 
-            <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
-              {type === "sample" ? "Request a Sample" : "Contact Us"}
-            </h1>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/50" />
 
-            <p className="text-lg text-primary-foreground/80">
-              {type === "sample"
-                ? "Tell us what sample you need"
-                : "Tell us about your project"}
-            </p>
-          </motion.div>
+        {/* CONTENT */}
+        <div className="relative z-10 container max-w-3xl text-left">
+          <p className="uppercase text-sm tracking-widest opacity-80">
+            {type === "sample" ? "Request Sample" : "Contact"}
+          </p>
+
+          <h1 className="text-4xl md:text-5xl font-bold mt-3">
+            {type === "sample" ? "Request a Sample" : "Contact Us"}
+          </h1>
+
+          <p className="mt-4 opacity-90 max-w-xl leading-relaxed">
+            {type === "sample"
+              ? "Tell us about your application and sample requirements. Our team will respond with suitable product recommendations."
+              : "Tell us about your project, and our team will help you find the right plant-based protein solution."}
+          </p>
         </div>
       </section>
 

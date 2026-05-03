@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { jobs } from "@/lib/data/jobs";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const benefits = [
   "401k",
@@ -76,26 +77,46 @@ export default function CareersPage() {
   return (
     <>
       {/* HERO */}
-      <section className="hero-gradient py-20 md:py-28">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-2xl"
-          >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
-              Careers
-            </p>
+      <section
+        className="
+    relative 
+    min-h-[55vh] 
+    sm:min-h-[60vh] 
+    md:min-h-[65vh] 
+    lg:min-h-[70vh] 
+    flex items-center
+    text-white 
+    overflow-hidden
+  "
+      >
+        {/* BACKGROUND IMAGE */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/career/bg-career.jpeg"
+            alt="Join the InnPro team"
+            fill
+            className="object-cover object-center md:object-[center_30%]"
+            priority
+          />
+        </div>
 
-            <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
-              Build the Future of Plant Protein
-            </h1>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/50" />
 
-            <p className="text-lg text-primary-foreground/80">
-              Join a team solving real problems in food technology.
-            </p>
-          </motion.div>
+        {/* CONTENT */}
+        <div className="relative z-10 container max-w-3xl text-left">
+          <p className="uppercase text-sm tracking-widest opacity-80">
+            Careers
+          </p>
+
+          <h1 className="text-4xl md:text-5xl font-bold mt-3">
+            Build the Future of Plant Protein
+          </h1>
+
+          <p className="mt-4 opacity-90 max-w-xl leading-relaxed">
+            Join a team focused on solving real-world challenges in food
+            technology, from ingredient innovation to scalable manufacturing.
+          </p>
         </div>
       </section>
 

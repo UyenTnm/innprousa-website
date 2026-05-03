@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { fadeUp } from "@/lib/animations";
+import Image from "next/image";
 
 const applications = [
   {
@@ -65,28 +66,47 @@ export default function ApplicationsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="hero-gradient py-20 md:py-28">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={fadeUp}
-            className="max-w-2xl"
-          >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
-              Applications
-            </p>
+      <section
+        className="
+    relative 
+    min-h-[55vh] 
+    sm:min-h-[60vh] 
+    md:min-h-[65vh] 
+    lg:min-h-[70vh] 
+    flex items-center
+    text-white 
+    overflow-hidden
+  "
+      >
+        {/* BACKGROUND IMAGE */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/applications/bg-applications.jpeg"
+            alt="Applications of plant protein"
+            fill
+            className="object-cover object-center md:object-[center_60%]"
+            priority
+          />
+        </div>
 
-            <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
-              Engineered for Your Application
-            </h1>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/50" />
 
-            <p className="text-lg text-primary-foreground/80">
-              Our ingredients are optimized for specific food and nutrition
-              applications with documented performance data.
-            </p>
-          </motion.div>
+        {/* CONTENT */}
+        <div className="relative z-10 container max-w-3xl text-left">
+          <p className="uppercase text-sm tracking-widest opacity-80">
+            Applications
+          </p>
+
+          <h1 className="text-4xl md:text-5xl font-bold mt-3">
+            Engineered for Your Application
+          </h1>
+
+          <p className="mt-4 opacity-90 max-w-xl leading-relaxed">
+            Our plant-based protein ingredients are designed to perform across a
+            wide range of food and beverage applications, delivering consistent
+            texture, taste, and nutritional value.
+          </p>
         </div>
       </section>
 

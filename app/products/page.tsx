@@ -12,7 +12,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="hero-gradient py-20 md:py-28">
+      {/* <section className="hero-gradient py-20 md:py-28">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -32,7 +32,88 @@ export default function ProductsPage() {
             </p>
           </motion.div>
         </div>
+      </section> */}
+      <section
+        className="relative 
+  min-h-[55vh] 
+  sm:min-h-[60vh] 
+  md:min-h-[65vh] 
+  lg:min-h-[70vh] 
+  flex items-center
+  text-white 
+  overflow-hidden"
+      >
+        {/* 🟢 BACKGROUND IMAGE */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/products/bg-products.jpeg"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* 🟢 OVERLAY để giữ text rõ */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* 🟢 CONTENT */}
+        <div className="relative z-10 container max-w-3xl text-left">
+          <p className="uppercase text-sm tracking-widest opacity-80">
+            Product Catalog
+          </p>
+
+          <h1 className="text-4xl md:text-5xl font-bold mt-3">
+            Profectin™ Protein Platform
+          </h1>
+
+          <p className="mt-4 opacity-90">
+            High-purity, functionally engineered proteins designed for modern
+            food manufacturing.
+          </p>
+
+          {/* CTA */}
+          <div
+            className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-stretch
+max-w-sm sm:max-w-md"
+          >
+            <a
+              href="/brochure-innprousa.pdf"
+              target="_blank"
+              className="
+      w-full sm:flex-1
+      text-center
+      px-6 py-3 
+      bg-white text-foreground
+      rounded-lg text-sm font-medium
+      transition-all duration-300
+      hover:bg-primary hover:text-primary-foreground
+      hover:shadow-lg hover:-translate-y-0.5
+    "
+            >
+              Download Brochure
+            </a>
+
+            <Link
+              href="/contact?type=sample"
+              className="
+      w-full sm:flex-1
+      text-center
+      px-6 py-3 
+      border border-white text-white
+      rounded-lg text-sm
+      transition-all duration-300
+      hover:bg-secondary hover:border-secondary hover:text-secondary-foreground
+      hover:shadow-lg hover:-translate-y-0.5
+    "
+            >
+              Request Sample
+            </Link>
+          </div>
+        </div>
       </section>
+
+      {/* <TechnologySection variant="products" /> */}
 
       {/* PRODUCTS */}
       <section className="py-20">
@@ -134,7 +215,9 @@ export default function ProductsPage() {
                     </div>
 
                     <Button variant="cta" className="w-full" asChild>
-                      <Link href="/contact">Request Sample</Link>
+                      <Link href={`/contact?product-${product.slug}`}>
+                        Request Sample
+                      </Link>
                     </Button>
                     {/* <Button variant="outline" className="w-full" asChild>
                       <Link href="#">Download Specs</Link>
