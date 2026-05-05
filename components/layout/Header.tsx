@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -12,7 +12,7 @@ const navItems = [
   { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
   { label: "Applications", href: "/applications" },
-  // { label: "Team", href: "/team" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -20,6 +20,34 @@ const navItems = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "auto";
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setMobileOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [mobileOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
@@ -40,8 +68,9 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
               className={`px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                pathname === item.href
+                isActive(item.href)
                   ? "text-white bg-secondary"
                   : "text-foreground hover:text-white hover:bg-secondary"
               }`}
@@ -72,16 +101,20 @@ export default function Header() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div
+          ref={menuRef}
+          className="border-t border-border bg-background lg:hidden"
+        >
           <nav className="container flex flex-col gap-1 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
+                aria-current={isActive(item.href) ? "page" : undefined}
                 className={`px-3 py-2 text-sm font-medium rounded-md ${
-                  pathname === item.href
-                    ? "text-primary bg-secondary"
+                  isActive(item.href)
+                    ? "text-white bg-secondary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >

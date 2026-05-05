@@ -150,6 +150,46 @@ export default function ApplicationsPage() {
         </div>
       </section>
 
+      {/* CONCEPT DEVELOPMENT */}
+      <section className="py-20 bg-gray-50">
+        <div className="container grid md:grid-cols-2 gap-10 items-center">
+          {/* TEXT */}
+          <div>
+            <p className="uppercase text-sm tracking-widest text-muted-foreground">
+              Innovation
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-bold mt-3">
+              Concept Development
+            </h2>
+
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              We go beyond ingredients. Our team develops retail ready product
+              concepts from high-protein noodles to functional beverages
+              designed to help your brand stand out on shelf.
+            </p>
+
+            <div className="mt-6">
+              <Button asChild>
+                <Link href="/applications/concepts">
+                  Explore Concepts <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* IMAGE */}
+          <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden">
+            <Image
+              src="/images/concepts/hero-protein-coffee1.png"
+              alt="Concept development"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="hero-gradient py-16">
         <div className="container text-center">

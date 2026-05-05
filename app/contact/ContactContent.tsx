@@ -12,6 +12,17 @@ import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { fadeUp } from "@/lib/animations";
 import Image from "next/image";
 
+type FormType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  role: string;
+  message: string;
+};
+
+type FormErrors = Partial<Record<keyof FormType, string>>;
+
 export default function ContactContent() {
   const searchParams = useSearchParams();
   const type = searchParams.get("type") || "contact";
@@ -27,7 +38,7 @@ export default function ContactContent() {
     role: "",
     message: "",
   });
-
+  const [errors, setErrors] = useState<FormErrors>({});
   // reset form sau khi submit
   useEffect(() => {
     if (submitted) {
@@ -47,14 +58,46 @@ export default function ContactContent() {
     }
   }, [submitted]);
 
+  // CHỈ SỬA NHỮNG PHẦN QUAN TRỌNG
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    setForm((prev) => ({ ...prev, [name]: value }));
+
+    // clear error đúng field (1 chỗ duy nhất)
+    if (errors[name as keyof FormType]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validationErrors = validate();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+
+      // 👉 focus + scroll input lỗi đầu tiên (xịn hơn)
+      const firstError = Object.keys(validationErrors)[0];
+      const el = document.querySelector(
+        `[name="${firstError}"]`,
+      ) as HTMLElement | null;
+
+      if (el) {
+        el.focus();
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -70,7 +113,7 @@ export default function ContactContent() {
           company: form.company,
           role: form.role,
           message: form.message,
-          type: type, // 🔥 QUAN TRỌNG
+          type: type,
         }),
       });
 
@@ -81,6 +124,65 @@ export default function ContactContent() {
     } finally {
       setLoading(false);
     }
+  };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const validationErrors = validate();
+
+  //   if (Object.keys(validationErrors).length > 0) {
+  //     setErrors(validationErrors);
+
+  //     const firstError = Object.keys(validationErrors)[0];
+  //     document.querySelector(`[name="${firstError}"]`)?.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "center",
+  //     });
+
+  //     return;
+  //   }
+
+  //   setLoading(true);
+
+  //   try {
+  //     await fetch("/api/contact", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         name: form.firstName + " " + form.lastName,
+  //         email: form.email,
+  //         phone: "",
+  //         company: form.company,
+  //         role: form.role,
+  //         message: form.message,
+  //         type: type, // 🔥 QUAN TRỌNG
+  //       }),
+  //     });
+
+  //     setSubmitted(true);
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert("Something went wrong");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const validate = () => {
+    const e: FormErrors = {};
+
+    if (!form.firstName.trim()) e.firstName = "First name is required";
+    if (!form.lastName.trim()) e.lastName = "Last name is required";
+
+    if (!form.email.trim()) e.email = "Email is required";
+    else if (!/^\S+@\S+\.\S+$/.test(form.email))
+      e.email = "Invalid email format";
+
+    if (!form.company.trim()) e.company = "Company is required";
+
+    return e;
   };
 
   return (
@@ -159,35 +261,71 @@ export default function ContactContent() {
                   <Input
                     name="firstName"
                     placeholder="First Name"
-                    required
                     value={form.firstName}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      handleChange(e);
+
+                      if (errors.firstName) {
+                        setErrors((prev) => ({ ...prev, firstName: "" }));
+                      }
+                    }}
+                    className={errors.firstName ? "border-red-500" : ""}
                   />
+
+                  {errors.firstName && (
+                    <p className="text-xs text-red-500">{errors.firstName}</p>
+                  )}
+
                   <Input
                     name="lastName"
-                    placeholder="Last Name"
-                    required
+                    placeholder="First Name"
                     value={form.lastName}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      handleChange(e);
+
+                      if (errors.lastName) {
+                        setErrors((prev) => ({ ...prev, lastName: "" }));
+                      }
+                    }}
+                    className={errors.lastName ? "border-red-500" : ""}
                   />
+
+                  {errors.lastName && (
+                    <p className="text-xs text-red-500">{errors.lastName}</p>
+                  )}
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                  />
-                  <Input
-                    name="company"
-                    placeholder="Company"
-                    required
-                    value={form.company}
-                    onChange={handleChange}
-                  />
+                  <div>
+                    <Input
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      value={form.email}
+                      onChange={handleChange}
+                      className={errors.email ? "border-red-500" : ""}
+                    />
+                    {errors.email && (
+                      <p className="text-xs text-red-500 mt-1">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <Input
+                      name="company"
+                      placeholder="Company"
+                      value={form.company}
+                      onChange={handleChange}
+                      className={errors.company ? "border-red-500" : ""}
+                    />
+                    {errors.company && (
+                      <p className="text-xs text-red-500 mt-1">
+                        {errors.company}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <Input
@@ -208,7 +346,11 @@ export default function ContactContent() {
                   onChange={handleChange}
                 />
 
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button
+                  type="submit"
+                  className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={loading}
+                >
                   {loading
                     ? "Sending..."
                     : type === "sample"

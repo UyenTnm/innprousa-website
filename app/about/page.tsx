@@ -98,7 +98,7 @@ const About = () => (
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0">
         <Image
-          src="/images/about/bg-about.jpeg"
+          src="/images/about/bg-about.png"
           alt="InnPro manufacturing facility"
           fill
           className="object-cover object-center md:object-[center_30%]"
