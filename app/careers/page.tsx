@@ -92,7 +92,7 @@ export default function CareersPage() {
         {/* BACKGROUND IMAGE */}
         <div className="absolute inset-0">
           <Image
-            src="/images/career/bg-career.jpeg"
+            src="/images/career/bg-career.webp"
             alt="Join the InnPro team"
             fill
             className="object-cover object-center md:object-[center_30%]"

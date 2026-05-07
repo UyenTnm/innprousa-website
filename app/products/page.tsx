@@ -46,7 +46,7 @@ export default function ProductsPage() {
         {/* 🟢 BACKGROUND IMAGE */}
         <div className="absolute inset-0">
           <Image
-            src="/images/products/bg-products.jpeg"
+            src="/images/products/bg-products.webp"
             alt="Background"
             fill
             className="object-cover"
@@ -95,7 +95,7 @@ max-w-sm sm:max-w-md"
             </a>
 
             <Link
-              href="/contact?type=sample"
+              href="/request-sample"
               className="
       w-full sm:flex-1
       text-center

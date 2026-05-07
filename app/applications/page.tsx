@@ -81,7 +81,7 @@ export default function ApplicationsPage() {
         {/* BACKGROUND IMAGE */}
         <div className="absolute inset-0">
           <Image
-            src="/images/applications/bg-applications.jpeg"
+            src="/images/applications/bg-applications.webp"
             alt="Applications of plant protein"
             fill
             className="object-cover object-center md:object-[center_60%]"
@@ -181,7 +181,7 @@ export default function ApplicationsPage() {
           {/* IMAGE */}
           <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden">
             <Image
-              src="/images/concepts/hero-protein-coffee1.png"
+              src="/images/concepts/hero-protein-coffee1.webp"
               alt="Concept development"
               fill
               className="object-cover"

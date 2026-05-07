@@ -174,7 +174,7 @@ const About = () => (
           className="rounded-lg overflow-hidden"
         >
           <Image
-            src="/images/manufacturing.png"
+            src="/images/about/manufacturing.webp"
             alt="InnPro manufacturing facility"
             width={600}
             height={400}

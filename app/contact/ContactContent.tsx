@@ -199,7 +199,7 @@ export default function ContactContent() {
         {/* BACKGROUND IMAGE */}
         <div className="absolute inset-0">
           <Image
-            src="/images/contact/bg-contact.jpeg"
+            src="/images/contact/bg-contact.webp"
             alt="Contact InnPro"
             fill
             className="object-cover object-center md:object-[center_30%]"

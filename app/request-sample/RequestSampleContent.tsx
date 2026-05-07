@@ -85,7 +85,7 @@ export default function RequestSampleContent() {
       <section className="relative min-h-[65vh] flex items-center overflow-hidden text-white">
         <div className="absolute inset-0">
           <Image
-            src="/images/contact/bg-contact.jpeg"
+            src="/images/contact/request-sample.webp"
             alt="Request Sample"
             fill
             priority

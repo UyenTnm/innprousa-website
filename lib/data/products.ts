@@ -38,7 +38,7 @@ export const products: Product[] = [
       "Sports nutrition",
       "Non-dairy (milk, yogurt, ice cream)",
     ],
-    image: "/images/products/profectein1-0.png",
+    image: "/images/products/profectein1-0.webp",
   },
   {
     id: "profectin-1-5",
@@ -67,7 +67,7 @@ export const products: Product[] = [
       "Sports nutrition",
       "Non-dairy (milk, yogurt, ice cream)",
     ],
-    image: "/images/products/profectein1-5.png",
+    image: "/images/products/profectein1-5.webp",
   },
   {
     id: "rice-protein-sg2",
@@ -87,7 +87,7 @@ export const products: Product[] = [
       "Health Bars",
       "Snack Foods",
     ],
-    image: "/images/products/riceImage.jpeg",
+    image: "/images/products/riceImage.webp",
   },
   {
     id: "oatmilk",
@@ -110,6 +110,6 @@ export const products: Product[] = [
       "Ice Cream & Gelato",
       "Desserts & Yogurt",
     ],
-    image: "/images/products/oat-milk-powder.avif",
+    image: "/images/products/oat-milk-powder.webp",
   },
 ];
