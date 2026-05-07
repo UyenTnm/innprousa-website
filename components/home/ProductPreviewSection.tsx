@@ -45,7 +45,7 @@ const products = [
     type: "Rice Protein",
     protein: "Plant-based",
     benefits: [
-      "enhanced drinkability",
+      "Enhanced drinkability",
       "Better suspension",
       "Allergen-friendly option",
     ],
