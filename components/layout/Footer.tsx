@@ -50,7 +50,7 @@ const Footer = () => (
             </li>
             <li>
               <Link
-                href="/contact?type=sample"
+                href="/request-sample"
                 className="hover:text-primary transition-colors"
               >
                 Request a Sample
@@ -76,7 +76,7 @@ const Footer = () => (
             </li>
             <li>
               <Link
-                href="/team"
+                href="/about#team"
                 className="hover:text-primary transition-colors"
               >
                 Our Team
@@ -101,7 +101,7 @@ const Footer = () => (
 
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>info@innprousa.com</li>
-            <li>+1 (555) 234-5678</li>
+            <li>+1 605-206-3467</li>
             <li>
               <Link
                 href="/contact"

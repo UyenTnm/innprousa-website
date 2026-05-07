@@ -30,7 +30,7 @@ const applications = [
     title: "Meat Analogues",
     description:
       "Textured proteins with binding and fibrous characteristics for next-gen meat alternatives.",
-    products: ["Pea Protein Isolate", "Faba Bean Protein"],
+    products: ["Pea Protein Isolate", "Rice Protein Concentrate"],
   },
   {
     icon: Dumbbell,
@@ -51,7 +51,7 @@ const applications = [
     title: "Dairy Alternatives",
     description:
       "Proteins with foaming and gelation properties suited for yogurt, cheese, and cream analogues.",
-    products: ["Faba Bean Protein", "Custom Blends"],
+    products: ["Pea Protein Isolate", "Custom Blends"],
   },
   {
     icon: Pill,

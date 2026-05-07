@@ -8,22 +8,22 @@ const items = [
   {
     icon: Beaker,
     title: "Process, Not Commodity",
-    desc: "Clean-label ingredients without sacrificing performance. No unnecessary additives or fillers.",
+    desc: "Protein performance is defined by process not raw material selection.",
   },
   {
     icon: Factory,
     title: "Control Across Value Chain",
-    desc: "From sourcing to production, ensuring consistency and reliability.",
+    desc: "End-to-end integration ensures consistency, traceability, and supply reliability.",
   },
   {
     icon: Settings,
     title: "Built for Real Formulation",
-    desc: "Designed for real food systems - not just lab specs.",
+    desc: "Designed to perform in real systems supporting stability, texture, and sensory quality.",
   },
   {
     icon: Leaf,
     title: "Clean Label Without Compromise",
-    desc: "Delivering performance while meeting clean label expectations.",
+    desc: "Clean-label ingredients without sacrificing functionality or nutrition.",
   },
 ];
 
@@ -49,9 +49,8 @@ export default function WhyInnproSection() {
             </h2>
 
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              We don’t just supply ingredients — we engineer performance at
-              every stage of the value chain, from raw material selection to
-              final application.
+              InnPro&apos;s advantage is not just in ingredients — it is in how
+              they are engineered, processed, and delivered.
             </p>
 
             {/* BIG HIGHLIGHT */}

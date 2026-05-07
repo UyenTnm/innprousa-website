@@ -35,10 +35,10 @@ export default function ProductsPage() {
       </section> */}
       <section
         className="relative 
-  min-h-[55vh] 
-  sm:min-h-[60vh] 
-  md:min-h-[65vh] 
-  lg:min-h-[70vh] 
+  min-h-[72vh]
+sm:min-h-[95vh]
+md:min-h-[70vh]
+lg:min-h-[70vh] 
   flex items-center
   text-white 
   overflow-hidden"
@@ -57,21 +57,47 @@ export default function ProductsPage() {
         {/* 🟢 OVERLAY để giữ text rõ */}
         <div className="absolute inset-0 bg-black/40" />
 
+        {/* 🟢 LOGO */}
+        <div className="absolute top-5 sm:top-6 md:top-8 left-1/2 -translate-x-1/2 z-10">
+          <Image
+            src="/images/profectein-logo.png"
+            alt="Profectin Logo"
+            width={180}
+            height={180}
+            className="
+      w-24 
+      sm:w-28 
+      md:w-36 
+      lg:w-44
+      h-auto 
+      object-contain
+    "
+            priority
+          />
+        </div>
+
         {/* 🟢 CONTENT */}
-        <div className="relative z-10 container max-w-3xl text-left">
+        <div
+          className="
+    relative z-10 
+    container max-w-3xl text-left
+    pt-24
+    sm:pt-28
+    md:pt-36
+    lg:pt-40
+  "
+        >
+          {" "}
           <p className="uppercase text-sm tracking-widest opacity-80">
             Product Catalog
           </p>
-
           <h1 className="text-4xl md:text-5xl font-bold mt-3">
             Profectin™ Protein Platform
           </h1>
-
           <p className="mt-4 opacity-90">
             High-purity, functionally engineered proteins designed for modern
             food manufacturing.
           </p>
-
           {/* CTA */}
           <div
             className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-stretch
@@ -181,6 +207,15 @@ max-w-sm sm:max-w-md"
                       </span>
                       <span className="bg-muted px-2 py-1 rounded">
                         Neutral taste
+                      </span>
+                      <span className="bg-muted px-2 py-1 rounded">
+                        Enhanced mouthfeel & texture
+                      </span>
+                      <span className="bg-muted px-2 py-1 rounded">
+                        Low sodium content
+                      </span>
+                      <span className="bg-muted px-2 py-1 rounded">
+                        Non-GMO, vegan, allergen-free
                       </span>
                     </div>
 

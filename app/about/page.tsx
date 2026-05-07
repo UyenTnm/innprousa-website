@@ -256,7 +256,9 @@ const About = () => (
     {/* =========================
         TEAM
     ========================= */}
-    <TeamSection />
+    <div id="team">
+      <TeamSection />
+    </div>
 
     {/* =========================
         VALUES
