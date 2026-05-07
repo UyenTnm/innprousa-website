@@ -182,7 +182,7 @@ const About = () => (
             and large-scale production.
           </p>
 
-          <div className="border-l-4 border-primary pl-4 italic text-muted-foreground">
+          <div className="mb-4 border-l-4 border-primary pl-4 italic text-muted-foreground">
             Delivering consistency at scale for global food manufacturers.
           </div>
 
