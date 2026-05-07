@@ -27,6 +27,8 @@ export default function Header() {
     return pathname.startsWith(href);
   };
 
+  const isSamplePage = pathname === "/request-sample";
+
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
   }, [mobileOpen]);
@@ -84,10 +86,12 @@ export default function Header() {
         {/* CTA */}
         <div className="hidden lg:block">
           <Button
-            className="bg-secondary text-white hover:bg-[#5A8E36]"
+            className={`text-white ${
+              isSamplePage ? "bg-[#5A8E36]" : "bg-secondary hover:bg-[#5A8E36]"
+            }`}
             asChild
           >
-            <Link href="/contact?type=sample">Request a Sample</Link>
+            <Link href="/request-sample">Request a Sample</Link>
           </Button>
         </div>
 
@@ -123,11 +127,12 @@ export default function Header() {
               </Link>
             ))}
 
-            <Button variant="cta" className="mt-2" asChild>
-              <Link
-                href="/contact?type=sample"
-                onClick={() => setMobileOpen(false)}
-              >
+            <Button
+              variant="cta"
+              className={`mt-2 ${isSamplePage ? "bg-[#5A8E36]" : ""}`}
+              asChild
+            >
+              <Link href="/request-sample" onClick={() => setMobileOpen(false)}>
                 Request a Sample
               </Link>
             </Button>

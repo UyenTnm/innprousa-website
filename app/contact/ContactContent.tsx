@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,9 +23,6 @@ type FormType = {
 type FormErrors = Partial<Record<keyof FormType, string>>;
 
 export default function ContactContent() {
-  const searchParams = useSearchParams();
-  const type = searchParams.get("type") || "contact";
-
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -113,7 +109,7 @@ export default function ContactContent() {
           company: form.company,
           role: form.role,
           message: form.message,
-          type: type,
+          // type: type,
         }),
       });
 
@@ -216,25 +212,41 @@ export default function ContactContent() {
 
         {/* CONTENT */}
         <div className="relative z-10 container max-w-3xl text-left">
-          <p className="uppercase text-sm tracking-widest opacity-80">
-            {type === "sample" ? "Request Sample" : "Contact"}
+          <p className="uppercase text-sm tracking-[0.3em] opacity-80">
+            Contact InnPro
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold mt-3">
-            {type === "sample" ? "Request a Sample" : "Contact Us"}
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mt-3">Contact Us</h1>
 
-          <p className="mt-4 opacity-90 max-w-xl leading-relaxed">
-            {type === "sample"
-              ? "Tell us about your application and sample requirements. Our team will respond with suitable product recommendations."
-              : "Tell us about your project, and our team will help you find the right plant-based protein solution."}
+          <p className="mt-6 text-lg text-white/85 leading-relaxed max-w-2xl">
+            Tell us about your project, ingredient requirements, or partnership
+            opportunities. Our team will help you find the right plant-based
+            protein solution for your business.
           </p>
         </div>
       </section>
 
       {/* FORM */}
       <section className="py-20">
-        <div className="container grid gap-12 lg:grid-cols-3">
+        <div className="container mb-14">
+          <div className="max-w-2xl">
+            <p className="text-sm uppercase tracking-[0.25em] text-secondary font-medium">
+              Contact Form
+            </p>
+
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold leading-tight">
+              Let’s Start the Conversation
+            </h2>
+
+            <p className="m-4 text-muted-foreground leading-relaxed">
+              Whether you are exploring new product ideas, ingredient sourcing,
+              or strategic partnerships, our team is ready to support your
+              business goals.
+            </p>
+          </div>
+        </div>
+
+        <div className="container grid gap-12 lg:grid-cols-3 items-start">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -257,6 +269,14 @@ export default function ContactContent() {
                 onSubmit={handleSubmit}
                 className="space-y-6 border rounded-lg p-8"
               >
+                <div className="mb-8">
+                  <h3 className="text-2xl font-semibold">Send Us a Message</h3>
+
+                  <p className="mt-2 text-muted-foreground">
+                    Complete the form below and our team will get back to you
+                    shortly.
+                  </p>
+                </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Input
                     name="firstName"
@@ -337,11 +357,7 @@ export default function ContactContent() {
 
                 <Textarea
                   name="message"
-                  placeholder={
-                    type === "sample"
-                      ? "What sample are you looking for?"
-                      : "Tell us about your project..."
-                  }
+                  placeholder="Tell us about your project, ingredient needs, or partnership inquiry..."
                   value={form.message}
                   onChange={handleChange}
                 />
@@ -351,11 +367,7 @@ export default function ContactContent() {
                   className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={loading}
                 >
-                  {loading
-                    ? "Sending..."
-                    : type === "sample"
-                      ? "Request Sample"
-                      : "Submit"}
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             )}
