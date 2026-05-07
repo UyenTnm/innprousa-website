@@ -12,7 +12,7 @@ const navItems = [
   { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
   { label: "Applications", href: "/applications" },
-  { label: "Blogs", href: "/blogs" },
+  { label: "Blogs", href: "/blog" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -59,6 +59,7 @@ export default function Header() {
             alt="InnPro Logo"
             width={120}
             height={40}
+            className="h-auto"
           />
         </Link>
 

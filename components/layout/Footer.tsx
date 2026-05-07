@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => (
@@ -8,10 +9,12 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2 mb-4">
             <Link href="/" className="flex items-center">
-              <img
+              <Image
                 src="/images/innpro-logo.png"
                 alt="InnPro Logo"
-                className="h-8 w-auto object-contain"
+                width={120}
+                height={40}
+                className="h-auto"
               />
             </Link>
           </div>
