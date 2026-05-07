@@ -60,7 +60,7 @@ export default function WhyInnproSection() {
                 Our Philosophy
               </p>
               <p className="mt-2 text-xl font-semibold leading-snug">
-                “Engineered for performance, built for real-world food systems.”
+                “Engineered systems. Not commodity protein.”
               </p>
             </div>
           </motion.div>

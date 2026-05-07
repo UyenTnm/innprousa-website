@@ -29,10 +29,10 @@ const slides = [
 ];
 
 const stats = [
-  { value: "15+", label: "Years Experience" },
+  { value: "20+", label: "Years Experience" },
   { value: "200+", label: "Formulations" },
   { value: "50K MT", label: "Annual Capacity" },
-  { value: "98.5%", label: "Consistency" },
+  { value: "99.6%", label: "Consistency" },
 ];
 
 export default function HeroSection() {

@@ -12,43 +12,44 @@ const products = [
     protein: "High purity",
     benefits: [
       "Neutral taste profile",
-      "Excellent functionality",
-      "Low sodium content",
+      "Commercial quantities available",
+      "Reliable across standard formulations",
     ],
-    applications: "Beverages, RTD, dairy alternatives",
+    // applications: "Beverages, RTD, dairy alternatives",
   },
   {
     name: "PROFECTEIN™ 1.5",
     type: "Advanced Pea Protein",
     protein: "Enhanced digestibility",
     benefits: [
-      "Improved amino acid profile",
+      // "Improved amino acid profile",
       "High PDCAAS score",
-      "Consistent performance",
+      "Enhance digestibility",
+      "Using patented processing",
     ],
-    applications: "Nutrition, sports, functional foods",
+    // applications: "Nutrition, sports, functional foods",
   },
   {
     name: "Oatmilk Powder",
     type: "Non-Dairy Ingredient",
     protein: "Variable",
     benefits: [
-      "Excellent solubility",
-      "Clean enzymatic process",
-      "Gluten-free options",
+      "Organic & gluten-free",
+      "Adjustable sugar (<3% to >20%)",
+      "High solubility & stability",
     ],
-    applications: "RTD, coffee, desserts",
+    // applications: "RTD, coffee, desserts",
   },
   {
     name: "Rice Protein SG-II",
     type: "Rice Protein",
     protein: "Plant-based",
     benefits: [
-      "Improved texture",
+      "enhanced drinkability",
       "Better suspension",
       "Allergen-friendly option",
     ],
-    applications: "Beverages, bars, snacks",
+    // applications: "Beverages, bars, snacks",
   },
 ];
 
@@ -115,9 +116,9 @@ export default function ProductPreviewSection() {
               </ul>
 
               {/* APPLICATION */}
-              <p className="text-sm text-muted-foreground">
+              {/* <p className="text-sm text-muted-foreground">
                 {product.applications}
-              </p>
+              </p> */}
 
               {/* CTA */}
               {/* <p className="mt-4 text-xs font-medium text-primary group-hover:underline">
@@ -129,7 +130,10 @@ export default function ProductPreviewSection() {
 
         {/* BUTTON */}
         <div className="mt-12 text-center">
-          <Button variant="outline" asChild>
+          <Button
+            className="bg-secondary text-white hover:bg-[#5A8E36] border-0"
+            asChild
+          >
             <Link href="/products">View Technical Product Catalog</Link>
           </Button>
         </div>

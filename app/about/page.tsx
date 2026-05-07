@@ -4,7 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Target, Eye, Lightbulb, ArrowRight } from "lucide-react";
+import {
+  Target,
+  Eye,
+  Lightbulb,
+  ArrowRight,
+  Settings,
+  Leaf,
+  BarChart3,
+  Factory,
+} from "lucide-react";
 import { fadeUp } from "@/lib/animations";
 import TeamSection from "@/components/team/TeamSection";
 
@@ -78,6 +87,26 @@ const timeline = [
   },
 ];
 
+// CORE CAPABILITIES
+const capabilities = [
+  {
+    icon: Settings,
+    text: "Proprietary and patented processing technology",
+  },
+  {
+    icon: Leaf,
+    text: "Vertically integrated operations",
+  },
+  {
+    icon: BarChart3,
+    text: "U.S. and international-based manufacturing",
+  },
+  {
+    icon: Factory,
+    text: "Large scale and redundant commercial production",
+  },
+];
+
 const About = () => (
   <div>
     {/* =========================
@@ -120,9 +149,9 @@ const About = () => (
         </h1>
 
         <p className="mt-4 opacity-90 max-w-xl leading-relaxed">
-          InnPro develops high-performance plant-based protein ingredients
-          through advanced processing technologies, supporting food
-          manufacturers with reliable, scalable, and consistent solutions.
+          InnPro is a U.S.-based food science and agri-biotech company advancing
+          plant-based nutrition through proprietary processing and ingredient
+          innovation, ensuring consistency, scalability, and product quality.
         </p>
       </div>
     </section>
@@ -180,6 +209,46 @@ const About = () => (
             height={400}
             className="w-full h-full object-cover"
           />
+        </motion.div>
+      </div>
+    </section>
+
+    {/* =========================
+    CORE CAPABILITIES
+========================= */}
+    <section className="py-16 bg-white border-y">
+      <div className="container">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 uppercase tracking-wide">
+            Core Capabilities
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-x-20 gap-y-8">
+            {capabilities.map((item, i) => (
+              <motion.div
+                key={item.text}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+                variants={fadeUp}
+                className="flex items-start gap-4"
+              >
+                <div className="mt-1 text-primary">
+                  <item.icon className="w-7 h-7" />
+                </div>
+
+                <p className="text-lg text-foreground leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

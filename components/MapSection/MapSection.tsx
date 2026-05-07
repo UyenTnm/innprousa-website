@@ -12,33 +12,6 @@ export default function MapSection() {
     <section className="py-20 md:py-28 bg-muted/30">
       <div className="container grid lg:grid-cols-2 gap-12 items-stretch">
         {/* ================= LEFT CONTENT ================= */}
-        {/* <div className="max-w-xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-            Global Footprint
-          </p>
-
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Where We Operate
-          </h2>
-
-          <p className="text-muted-foreground mb-6">
-            InnPro operates across the United States, Vietnam, and India —
-            combining R&D expertise with large-scale manufacturing to support
-            global food and nutrition companies.
-          </p>
-
-          <div className="space-y-3 text-sm">
-            <div>
-              🇺🇸 <b>United States</b> — HQ, R&D, Processing
-            </div>
-            <div>
-              🇻🇳 <b>Vietnam</b> — Manufacturing (Dong Nai)
-            </div>
-            <div>
-              🇮🇳 <b>India</b> — Partner Network
-            </div>
-          </div>
-        </div> */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -160,7 +133,7 @@ export default function MapSection() {
 
           {/* ===== US CLUSTER ===== */}
           <div
-            onClick={() => setOpenUS(true)}
+            onMouseEnter={() => setOpenUS(true)}
             className="absolute top-[42%] left-[33%] cursor-pointer"
           >
             <div className="w-3 h-3 bg-blue-600 rounded-full" />
@@ -180,9 +153,13 @@ export default function MapSection() {
           </div>
 
           {/* ===== VIETNAM (FOCUS) ===== */}
-          <div className="absolute top-[60%] left-[72%]">
+          <div
+            className="absolute top-[51%] left-[69%]
+md:top-[55%] md:left-[70%]
+lg:top-[53%] lg:left-[70%]"
+          >
             <span className="absolute inline-flex h-10 w-10 rounded-full bg-green-500/20 animate-ping"></span>
-            <span className="relative inline-flex h-4 w-4 rounded-full bg-green-600"></span>
+            <span className="relative inline-flex h-3 w-3 rounded-full bg-green-600"></span>
           </div>
 
           <div className="absolute top-[65%] left-[70%] text-[10px] sm:text-xs bg-white px-2 py-1 rounded shadow">
@@ -192,19 +169,69 @@ export default function MapSection() {
           </div>
         </motion.div>
       </div>
-      {openUS && (
+      {/* {openUS && (
         <div
           className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur-sm flex items-center justify-center"
-          onClick={() => setOpenUS(false)}
+          onMouseLeave={() => {
+            setTimeout(() => setOpenUS(false), 150);
+          }}
         >
           <div
             className="bg-white rounded-2xl p-6 w-[90%] max-w-4xl relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* CLOSE */}
             <button
               onClick={() => setOpenUS(false)}
               className="absolute top-3 right-3 text-sm"
+            >
+              ✕
+            </button>
+
+            <h3 className="text-xl font-bold mb-4">United States Operations</h3>
+
+            <div className="relative w-full h-[400px]">
+              <Image
+                src="/images/usa-map.svg"
+                alt="US Map"
+                fill
+                className="object-contain"
+              />
+
+              <div className="absolute top-[55%] left-[38%] text-xs">
+                ⭐ Dakota Dunes (HQ)
+              </div>
+
+              <div className="absolute top-[50%] left-[42%] flex items-center gap-1 text-xs">
+                <span className="w-2 h-2 bg-green-600 rounded-full"></span>
+                <span>Austin (R&D)</span>
+              </div>
+
+              <div className="absolute top-[40%] left-[48%] flex items-center gap-1 text-xs">
+                <span className="w-2 h-2 bg-green-600 rounded-full"></span>
+                St. Paul (R&D)
+              </div>
+
+              <div className="absolute top-[65%] left-[60%] flex items-center gap-1 text-xs">
+                <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                <span>Mooresville (Processing)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )} */}
+      {openUS && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black/30 backdrop-blur-sm flex items-center justify-center transition-all duration-300"
+          onClick={() => setOpenUS(false)}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-2xl p-6 w-[90%] max-w-4xl relative animate-in fade-in zoom-in duration-300 shadow-2xl"
+          >
+            {/* CLOSE */}
+            <button
+              onClick={() => setOpenUS(false)}
+              className="absolute top-3 right-3 text-sm hover:scale-110 transition"
             >
               ✕
             </button>
