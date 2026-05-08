@@ -73,22 +73,26 @@ export default function ApplicationSlider() {
         {/* SLIDER */}
         <div
           ref={containerRef}
-          className="overflow-hidden sm:overflow-visible"
+          className="
+  overflow-hidden
+  cursor-grab
+  active:cursor-grabbing
+"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
         >
           <motion.div
             className="flex gap-4 md:gap-6
 
-  pl-4 md:pl-0
-
-  snap-x snap-mandatory
-  cursor-grab active:cursor-grabbing"
+  pl-4 md:pl-0  cursor-grab active:cursor-grabbing"
             style={{ x }}
             drag="x"
+            dragElastic={0.08}
+            dragMomentum={true}
             ref={trackRef}
-            dragConstraints={containerRef}
+            // dragConstraints={containerRef}
             onDragStart={() => setIsPaused(true)}
             onDragEnd={() => setIsPaused(false)}
           >
@@ -120,10 +124,12 @@ export default function ApplicationSlider() {
   hover:border-primary/20
 "
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl
+                <div
+                  className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl
 bg-gradient-to-br from-primary/15 to-primary/5
 
-shadow-inner">
+shadow-inner"
+                >
                   <item.icon className="h-6 w-6 text-primary" />
                 </div>
 
