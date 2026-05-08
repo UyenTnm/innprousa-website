@@ -220,7 +220,7 @@ export default function LiveChat() {
 
    overflow-hidden
 
-  w-14 h-14 rounded-full
+  h-14 px-5 rounded-full
 
   bg-gradient-to-br from-primary via-[#008ea3] to-[#00a9c0]
 
@@ -244,8 +244,18 @@ export default function LiveChat() {
   active:scale-95
 "
       >
-        <div className="relative z-10">
-          {open ? <X size={22} /> : <MessageCircle size={22} />}
+        <div className="relative z-10 flex items-center gap-2">
+          {open ? (
+            <X size={20} />
+          ) : (
+            <>
+              <MessageCircle size={20} />
+
+              <span className="text-sm font-medium whitespace-nowrap">
+                Live Chat
+              </span>
+            </>
+          )}
         </div>
         <div
           className="

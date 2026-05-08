@@ -92,7 +92,6 @@ export default function ApplicationSlider() {
             dragElastic={0.08}
             dragMomentum={true}
             ref={trackRef}
-            // dragConstraints={containerRef}
             onDragStart={() => setIsPaused(true)}
             onDragEnd={() => setIsPaused(false)}
           >
@@ -100,9 +99,15 @@ export default function ApplicationSlider() {
               <div
                 key={i}
                 className="
-  min-w-[78%]
-  sm:min-w-[58%]
-  md:min-w-[320px]
+  min-w-[88%]
+
+xs:min-w-[82%]
+
+sm:min-w-[68%]
+
+md:min-w-[360px]
+
+lg:min-w-[380px]
 
   flex-shrink-0
 
