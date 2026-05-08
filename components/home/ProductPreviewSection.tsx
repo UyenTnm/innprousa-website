@@ -82,7 +82,7 @@ export default function ProductPreviewSection() {
         </motion.div>
 
         {/* GRID */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
           {products.map((product, i) => (
             <motion.div
               key={product.name}
@@ -91,39 +91,51 @@ export default function ProductPreviewSection() {
               viewport={{ once: true }}
               custom={i}
               variants={fadeUp}
-              className="group rounded-xl border border-border bg-card p-6 flex flex-col justify-between h-full transition hover:shadow-lg hover:-translate-y-1"
+              className="group rounded-2xl border border-border/60 bg-card p-6 
+      flex flex-col h-full transition hover:shadow-lg hover:-translate-y-1"
             >
-              {/* TYPE */}
-              <span className="text-[10px] uppercase text-muted-foreground">
-                {product.type}
-              </span>
+              {/* TOP CONTENT */}
+              <div>
+                {/* TYPE */}
+                <span className="text-[10px] uppercase text-muted-foreground">
+                  {product.type}
+                </span>
 
-              {/* NAME */}
-              <h3 className="mt-2 mb-1 font-semibold text-foreground">
-                {product.name}
-              </h3>
+                {/* NAME */}
+                <h3
+                  className="
+            mt-2 
+            font-semibold 
+            text-foreground
+            min-h-[40px]
+            flex items-start
+          "
+                >
+                  {product.name}
+                </h3>
 
-              {/* PROTEIN */}
-              <p className="mb-3 text-xl font-bold text-primary tracking-tight">
-                {product.protein}
-              </p>
+                {/* PROTEIN */}
+                <p className="mb-4 text-xl font-bold text-primary tracking-tight">
+                  {product.protein}
+                </p>
 
-              {/* BENEFITS */}
-              <ul className="mb-3 space-y-1 text-sm text-muted-foreground">
-                {product.benefits.map((b) => (
-                  <li key={b}>• {b}</li>
-                ))}
-              </ul>
-
-              {/* APPLICATION */}
-              {/* <p className="text-sm text-muted-foreground">
-                {product.applications}
-              </p> */}
-
-              {/* CTA */}
-              {/* <p className="mt-4 text-xs font-medium text-primary group-hover:underline">
-                View specs →
-              </p> */}
+                {/* BENEFITS */}
+                <ul
+                  className="
+            space-y-2
+            text-sm
+            text-muted-foreground
+            min-h-[120px]
+          "
+                >
+                  {product.benefits.map((b) => (
+                    <li key={b} className="flex gap-2 leading-relaxed">
+                      <span className="mt-[2px] text-primary">•</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -58,8 +58,12 @@ export default function WhyInnproSection() {
               <p className="text-sm uppercase tracking-wide text-white/70">
                 Our Philosophy
               </p>
-              <p className="mt-2 text-xl font-semibold leading-snug">
-                “Engineered systems. Not commodity protein.”
+
+              <p className="mt-2 text-lg md:text-xl font-semibold leading-snug">
+                <span className="block xl:inline">Engineered systems.</span>{" "}
+                <span className="whitespace-nowrap">
+                  Not commodity protein.
+                </span>
               </p>
             </div>
           </motion.div>

@@ -132,11 +132,37 @@ export default function MapSection() {
           </svg>
 
           {/* ===== US CLUSTER ===== */}
-          <div
+          {/* <div
             onMouseEnter={() => setOpenUS(true)}
             className="absolute top-[42%] left-[33%] cursor-pointer"
           >
             <div className="w-3 h-3 bg-blue-600 rounded-full" />
+          </div> */}
+
+          <div
+            onMouseEnter={() => {
+              if (window.innerWidth >= 768) {
+                setOpenUS(true);
+              }
+            }}
+            onClick={() => setOpenUS(true)}
+            onTouchStart={() => setOpenUS(true)}
+            className="
+    absolute top-[42%] left-[33%]
+    cursor-pointer
+    z-20
+    p-3
+    -translate-x-1/2
+    -translate-y-1/2
+  "
+          >
+            <div className="relative flex items-center justify-center">
+              {/* hit area */}
+              <div className="absolute h-8 w-8 rounded-full" />
+
+              {/* dot */}
+              <div className="w-3 h-3 bg-blue-600 rounded-full shadow-md" />
+            </div>
           </div>
 
           <div className="absolute top-[46%] left-[29%] text-[14px] sm:text-xs">
