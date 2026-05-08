@@ -3,6 +3,7 @@ import "./globals.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
+import LiveChat from "@/components/chat/LiveChat";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" className={jakarta.variable}>
       <body>
         <LayoutWrapper>{children}</LayoutWrapper>
+        <LiveChat />
       </body>
     </html>
   );

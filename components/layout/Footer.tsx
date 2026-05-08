@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaThreads,
+} from "react-icons/fa6";
 
 const Footer = () => (
   <footer className="border-t border-border bg-white">
@@ -23,6 +29,78 @@ const Footer = () => (
             Science-driven plant protein ingredients for performance-focused
             food manufacturers.
           </p>
+
+          <div className="flex items-center gap-3 mt-5">
+            {/* FaFacebookF */}
+            <a
+              href="https://www.facebook.com/profile.php?id=61570666198600"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+      w-10 h-10 rounded-full
+      border border-border
+      flex items-center justify-center
+      text-muted-foreground
+      hover:bg-primary hover:text-white hover:border-primary hover:scale-105
+hover:shadow-md
+      transition-all duration-300
+    "
+            >
+              <FaFacebookF size={18} />
+            </a>
+
+            {/* FaInstagram */}
+            <a
+              href="https://www.instagram.com/innprousa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+      w-10 h-10 rounded-full
+      border border-border
+      flex items-center justify-center
+      text-muted-foreground hover:scale-105 hover:shadow-md
+      hover:bg-primary hover:text-white hover:border-primary
+      transition-all duration-300
+    "
+            >
+              <FaInstagram size={18} />
+            </a>
+
+            {/* Threads */}
+            <a
+              href="https://www.threads.com/@innprousa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+      w-10 h-10 rounded-full
+      border border-border
+      flex items-center justify-center
+      text-muted-foreground hover:scale-105 hover:shadow-md
+      hover:bg-primary hover:text-white hover:border-primary
+      transition-all duration-300
+    "
+            >
+              {/* <span className="text-sm font-semibold">@</span> */}
+              <FaThreads size={18} />
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/company/innprousa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+      w-10 h-10 rounded-full
+      border border-border
+      flex items-center justify-center
+      text-muted-foreground hover:scale-105 hover:shadow-md
+      hover:bg-primary hover:text-white hover:border-primary
+      transition-all duration-300
+    "
+            >
+              <FaLinkedinIn size={18} />
+            </a>
+          </div>
         </div>
 
         {/* Products */}

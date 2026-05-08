@@ -36,21 +36,6 @@ export default function ApplicationSlider() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  // useAnimationFrame(() => {
-  //   if (!isPaused) {
-  //     let current = x.get();
-  //     current -= 0.3;
-
-  //     const width = 320 + 24;
-  //     const totalWidth = width * applications.length;
-
-  //     if (current < -totalWidth) {
-  //       current = 0;
-  //     }
-
-  //     x.set(current);
-  //   }
-  // });
   useAnimationFrame(() => {
     if (!isPaused && trackRef.current) {
       let current = x.get();
@@ -94,7 +79,12 @@ export default function ApplicationSlider() {
           onTouchStart={() => setIsPaused(true)}
         >
           <motion.div
-            className="flex gap-4 md:gap-6 snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+            className="flex gap-4 md:gap-6
+
+  pl-4 md:pl-0
+
+  snap-x snap-mandatory
+  cursor-grab active:cursor-grabbing"
             style={{ x }}
             drag="x"
             ref={trackRef}
@@ -105,9 +95,35 @@ export default function ApplicationSlider() {
             {loopItems.map((item, i) => (
               <div
                 key={i}
-                className="min-w-[85%] sm:min-w-[70%] md:min-w-[320px] flex-shrink-0 snap-start rounded-xl border border-border bg-card p-6 transition hover:shadow-lg hover:-translate-y-1"
+                className="
+  min-w-[78%]
+  sm:min-w-[58%]
+  md:min-w-[320px]
+
+  flex-shrink-0
+
+  snap-start
+
+  rounded-3xl
+
+  border border-border
+
+  bg-white
+
+  p-6 md:p-7
+
+  transition-all duration-300
+
+  hover:shadow-2xl
+  hover:-translate-y-2
+
+  hover:border-primary/20
+"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl
+bg-gradient-to-br from-primary/15 to-primary/5
+
+shadow-inner">
                   <item.icon className="h-6 w-6 text-primary" />
                 </div>
 

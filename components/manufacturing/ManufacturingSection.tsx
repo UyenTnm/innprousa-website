@@ -97,7 +97,7 @@ export default function ManufacturingSection() {
               muted
               playsInline
               preload="none"
-              poster="/images/manufacturing.png"
+              poster="/images/about/manufacturing.webp"
               className="w-full h-full object-cover"
             >
               <source src="/videos/factory-demo.mp4" type="video/mp4" />

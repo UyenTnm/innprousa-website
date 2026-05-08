@@ -124,7 +124,6 @@ const About = () => (
     overflow-hidden
   "
     >
-      {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0">
         <Image
           src="/images/about/bg-about.png"
@@ -135,10 +134,8 @@ const About = () => (
         />
       </div>
 
-      {/* OVERLAY */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* CONTENT */}
       <div className="relative z-10 container max-w-3xl text-left">
         <p className="uppercase text-sm tracking-widest opacity-80">
           About InnPro
@@ -155,6 +152,7 @@ const About = () => (
         </p>
       </div>
     </section>
+
     {/* =========================
         MISSION / ABOUT CONTENT
     ========================= */}
