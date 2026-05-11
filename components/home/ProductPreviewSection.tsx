@@ -122,21 +122,37 @@ export default function ProductPreviewSection() {
                 {/* BENEFITS */}
                 <ul
                   className="
-            space-y-2
-            text-sm
-            text-muted-foreground
-            min-h-[120px]
-          "
+    space-y-3
+    text-sm
+    text-muted-foreground
+    min-h-[120px]
+  "
                 >
                   {product.benefits.map((b) => (
                     <li
                       key={b}
-                      className="flex items-center gap-2 leading-relaxed"
+                      className="
+    flex
+    items-start
+    gap-3
+    leading-relaxed
+  "
                     >
-                      <span className="flex items-center justify-center text-primary">
+                      {/* Bullet được đẩy lên nhẹ để thẳng với dòng đầu tiên */}
+                      <span
+                        className="
+      shrink-0
+      text-primary
+      text-base
+      leading-none
+      mt-[0.22em]
+    "
+                      >
                         •
                       </span>
-                      <span>{b}</span>
+
+                      {/* Nội dung */}
+                      <span className="flex-1">{b}</span>
                     </li>
                   ))}
                 </ul>
