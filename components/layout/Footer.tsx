@@ -197,6 +197,27 @@ hover:shadow-md
       {/* Bottom */}
       <div className="mt-12 pt-8 border-t border-border text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} InnPro. All rights reserved.
+        <span className="block mt-2">
+          Powered by{" "}
+          <a
+            href="https://www.staffunitedgroup.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+    font-medium
+    text-primary
+    visited:text-primary
+    hover:text-accent
+    active:text-primary
+    focus:text-primary
+    transition-colors
+    hover:underline
+    underline-offset-4
+  "
+          >
+            Staff United Group
+          </a>
+        </span>
       </div>
     </div>
   </footer>
