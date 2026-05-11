@@ -23,27 +23,48 @@ export default async function BlogPage() {
       <div className="container">
         <h1 className="text-4xl font-bold mb-10">Blog</h1>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 items-stretch">
           {posts.map((post) => (
-            <Link key={post._id} href={`/blog/${post.slug.current}`}>
-              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition">
-                <div className="relative h-60">
+            <Link
+              key={post._id}
+              href={`/blog/${post.slug.current}`}
+              className="h-full"
+            >
+              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition h-full flex flex-col">
+                {/* IMAGE */}
+                <div className="relative h-60 flex-shrink-0">
                   <Image
                     src={urlFor(post.mainImage).url()}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
                     className="object-cover"
                   />
                 </div>
 
-                <div className="p-6">
+                {/* CONTENT */}
+                <div className="p-6 flex flex-col flex-1">
+                  {/* DATE */}
+                  {/* DATE */}
                   <p className="text-sm text-muted-foreground">
-                    {new Date(post._createdAt).toLocaleDateString()}
+                    {post._createdAt
+                      ? new Date(post._createdAt).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                      : ""}
                   </p>
 
-                  <h2 className="text-xl font-semibold mt-2">{post.title}</h2>
+                  {/* TITLE - luôn cùng chiều cao */}
+                  <h2 className="text-xl font-semibold mt-2 min-h-[64px]">
+                    {post.title}
+                  </h2>
 
-                  <p className="mt-2 text-muted-foreground">{post.excerpt}</p>
+                  {/* EXCERPT - luôn cùng chiều cao */}
+                  <p className="mt-2 text-muted-foreground min-h-[72px]">
+                    {post.excerpt}
+                  </p>
                 </div>
               </div>
             </Link>

@@ -150,6 +150,82 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* CTA */}
+      {/* <section className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_200%] animate-gradient-x">
+        <div className="container text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+            variants={fadeUp}
+            className="mx-auto max-w-2xl"
+          >
+            <h2 className="mb-4 font-display text-3xl font-bold text-primary-foreground md:text-4xl">
+              Start Your Next Formulation with Confidence
+            </h2>
+
+            <p className="mb-8 text-lg text-primary-foreground/80">
+              Get samples, detailed specifications, and direct support from our
+              formulation experts to accelerate your product development.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link href="/contact">Request a Sample</Link>
+              </Button>
+
+              <Button variant="hero-outline" size="lg" asChild>
+                <Link href="/contact">Talk to Our Team</Link>
+              </Button>
+            </div>
+
+            <p className="mt-6 text-sm text-primary-foreground/60">
+              Trusted by global food and nutrition manufacturers
+            </p>
+          </motion.div>
+        </div>
+      </section> */}
+
+      {/* CTA */}
+      {/* <section className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-r from-[#007497] via-[#6FA544] to-[#007497] bg-[length:200%_200%] animate-gradient-x">
+        <div className="absolute inset-0 bg-black/10" />
+
+        <div className="relative z-10 container text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+            variants={fadeUp}
+            className="mx-auto max-w-2xl"
+          >
+            <h2 className="mb-4 font-display text-3xl font-bold text-white md:text-4xl">
+              Start Your Next Formulation with Confidence
+            </h2>
+
+            <p className="mb-8 text-lg text-white/85">
+              Get samples, detailed specifications, and direct support from our
+              formulation experts to accelerate your product development.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link href="/contact">Request a Sample</Link>
+              </Button>
+
+              <Button variant="hero-outline" size="lg" asChild>
+                <Link href="/contact">Talk to Our Team</Link>
+              </Button>
+            </div>
+
+            <p className="mt-6 text-sm text-white/70">
+              Trusted by global food and nutrition manufacturers
+            </p>
+          </motion.div>
+        </div>
+      </section> */}
     </div>
   );
 };

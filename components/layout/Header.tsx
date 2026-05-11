@@ -61,7 +61,7 @@ export default function Header() {
             alt="InnPro Logo"
             width={120}
             height={40}
-            className="h-auto"
+            className="w-40 h-auto"
           />
         </Link>
 

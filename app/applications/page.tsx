@@ -184,6 +184,7 @@ export default function ApplicationsPage() {
               src="/images/concepts/hero-protein-coffee1.webp"
               alt="Concept development"
               fill
+              sizes="100vw"
               className="object-cover"
             />
           </div>

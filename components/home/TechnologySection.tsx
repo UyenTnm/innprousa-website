@@ -48,7 +48,7 @@ export default function TechnologySection({
             alt="Profectein"
             width={200}
             height={60}
-            className="object-contain"
+            className="h-auto object-contain"
           />
         </div>
 

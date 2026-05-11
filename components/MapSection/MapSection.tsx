@@ -101,8 +101,10 @@ export default function MapSection() {
           <Image
             src="/images/world-map-clean.avif"
             alt="Global map"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1400px"
             fill
             className="object-contain opacity-40"
+            priority
           />
 
           {/* ===== SVG LINES ===== */}
