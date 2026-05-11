@@ -15,6 +15,7 @@ type FormType = {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   company: string;
   role: string;
   message: string;
@@ -26,7 +27,7 @@ export default function ContactContent() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -40,7 +41,7 @@ export default function ContactContent() {
     if (submitted) {
       const timer = setTimeout(() => {
         setSubmitted(false);
-        setForm({
+        setFormData({
           firstName: "",
           lastName: "",
           email: "",
@@ -61,7 +62,7 @@ export default function ContactContent() {
   ) => {
     const { name, value } = e.target;
 
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
     // clear error đúng field (1 chỗ duy nhất)
     if (errors[name as keyof FormType]) {
@@ -77,7 +78,6 @@ export default function ContactContent() {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
 
-      // 👉 focus + scroll input lỗi đầu tiên (xịn hơn)
       const firstError = Object.keys(validationErrors)[0];
       const el = document.querySelector(
         `[name="${firstError}"]`,
@@ -103,13 +103,13 @@ export default function ContactContent() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: form.firstName + " " + form.lastName,
-          email: form.email,
-          phone: "",
-          company: form.company,
-          role: form.role,
-          message: form.message,
-          // type: type,
+          type: "Contact",
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          company: formData.company,
+          role: formData.role,
+          message: formData.message,
         }),
       });
 
@@ -169,14 +169,15 @@ export default function ContactContent() {
   const validate = () => {
     const e: FormErrors = {};
 
-    if (!form.firstName.trim()) e.firstName = "First name is required";
-    if (!form.lastName.trim()) e.lastName = "Last name is required";
+    if (!formData.firstName.trim()) e.firstName = "First name is required";
 
-    if (!form.email.trim()) e.email = "Email is required";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email))
+    if (!formData.lastName.trim()) e.lastName = "Last name is required";
+
+    if (!formData.email.trim()) e.email = "Email is required";
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email))
       e.email = "Invalid email format";
 
-    if (!form.company.trim()) e.company = "Company is required";
+    if (!formData.company.trim()) e.company = "Company is required";
 
     return e;
   };
@@ -281,7 +282,7 @@ export default function ContactContent() {
                   <Input
                     name="firstName"
                     placeholder="First Name"
-                    value={form.firstName}
+                    value={formData.firstName}
                     onChange={(e) => {
                       handleChange(e);
 
@@ -298,8 +299,8 @@ export default function ContactContent() {
 
                   <Input
                     name="lastName"
-                    placeholder="First Name"
-                    value={form.lastName}
+                    placeholder="Last Name"
+                    value={formData.lastName}
                     onChange={(e) => {
                       handleChange(e);
 
@@ -321,7 +322,7 @@ export default function ContactContent() {
                       name="email"
                       type="email"
                       placeholder="Email"
-                      value={form.email}
+                      value={formData.email}
                       onChange={handleChange}
                       className={errors.email ? "border-red-500" : ""}
                     />
@@ -336,7 +337,7 @@ export default function ContactContent() {
                     <Input
                       name="company"
                       placeholder="Company"
-                      value={form.company}
+                      value={formData.company}
                       onChange={handleChange}
                       className={errors.company ? "border-red-500" : ""}
                     />
@@ -351,14 +352,14 @@ export default function ContactContent() {
                 <Input
                   name="role"
                   placeholder="Your Role"
-                  value={form.role}
+                  value={formData.role}
                   onChange={handleChange}
                 />
 
                 <Textarea
                   name="message"
                   placeholder="Tell us about your project, ingredient needs, or partnership inquiry..."
-                  value={form.message}
+                  value={formData.message}
                   onChange={handleChange}
                 />
 

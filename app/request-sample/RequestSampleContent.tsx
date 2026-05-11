@@ -53,22 +53,31 @@ export default function RequestSampleContent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     setLoading(true);
 
     try {
-      await fetch("/api/contact", {
+      const response = await fetch("/api/request-sample", {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify({
-          ...form,
-          type: "sample",
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+          company: form.company,
+          product: form.product,
+          quantity: form.quantity,
+          application: form.application,
+          message: form.message,
         }),
       });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.error || "Submission failed");
+      }
 
       setSubmitted(true);
     } catch (err) {

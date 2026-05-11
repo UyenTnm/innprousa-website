@@ -5,7 +5,7 @@ export async function POST(req: Request) {
   const data = await req.json();
 
   await fetch(
-    "https://script.google.com/macros/s/AKfycby4hANKKFg6Qcgk3X2oXER-DvS1l2PZWwUBq_JDWWFBcqBFFemBHTb4xEFfThH3kHay/exec",
+    "https://script.google.com/macros/s/AKfycbzdXRBWtCCQC1i0Wxz7m1LqYk-ekHReLre8xqzDohSkauyuOnOG4kMiEZSNkDCpuAMv/exec",
     {
       method: "POST",
       headers: {
