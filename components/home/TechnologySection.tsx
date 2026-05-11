@@ -74,7 +74,16 @@ export default function TechnologySection({
           ].map((item) => (
             <div
               key={item}
-              className="rounded-lg border border-gray-200 px-4 py-3 text-sm bg-white shadow-sm"
+              className="
+        rounded-lg
+        border border-gray-200
+        px-4 py-3
+        text-sm
+        bg-white
+        shadow-sm
+        flex items-center justify-center
+        text-center
+      "
             >
               {item}
             </div>

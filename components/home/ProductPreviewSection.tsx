@@ -129,8 +129,13 @@ export default function ProductPreviewSection() {
           "
                 >
                   {product.benefits.map((b) => (
-                    <li key={b} className="flex gap-2 leading-relaxed">
-                      <span className="mt-[2px] text-primary">•</span>
+                    <li
+                      key={b}
+                      className="flex items-center gap-2 leading-relaxed"
+                    >
+                      <span className="flex items-center justify-center text-primary">
+                        •
+                      </span>
                       <span>{b}</span>
                     </li>
                   ))}
