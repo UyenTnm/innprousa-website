@@ -59,8 +59,10 @@ export default function Header() {
           <Image
             src="/images/innpro-logo.png"
             alt="InnPro Logo"
+            loading="eager"
             width={120}
             height={40}
+            priority
             className="w-40 h-auto"
           />
         </Link>

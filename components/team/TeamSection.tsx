@@ -17,25 +17,51 @@ const teamMembers: TeamMember[] = [
     name: "Amy Claren",
     role: "CEO",
     image: "/images/teams/AmyClaren-Ceo.png",
-    bio: `Amy Claren started with InnPro at its inception in 2015 as the Office Manager. Her “team player” attitude and ability to wear multiple hats has helped InnPro grow to where it is today. Amy has moved her way up in InnPro from the Office Manager to Director of Operations to VP of Operations and in early 2024 became the CEO. Amy’s attention to detail, organization, communication, and leadership skills have proven valuable in managing the daily activities to keep InnPro running smoothly. Amy leads a team focused on growing revenue and enhancing the food industry with innovative products by developing and implementing solutions that push boundaries and provide efficiencies company-wide. Amy earned her AAS degree from University of WI-Fox Valley followed later by an AS-Nursing degree from WITCC in Sioux City, IA. Outside of work, Amy enjoys spending time with her animals and cooking for her family.`,
+    bio: `Amy Claren started with InnPro at its inception in 2015 as the Office Manager. Her “team player” attitude and ability to wear multiple hats has helped InnPro grow to where it is today.
+
+Amy has moved her way up in InnPro from the Office Manager to Director of Operations to VP of Operations and in early 2024 became the CEO.
+
+Amy’s attention to detail, organization, communication, and leadership skills have proven valuable in managing the daily activities to keep InnPro running smoothly.
+
+Amy leads a team focused on growing revenue and enhancing the food industry with innovative products by developing and implementing solutions that push boundaries and provide efficiencies company-wide.
+
+Amy earned her AAS degree from University of WI-Fox Valley followed later by an AS-Nursing degree from WITCC in Sioux City, IA. Prior to earning her AS-Nursing degree, Amy worked in the food manufacturing space for nearly 5 years for a food ingredient company that had Annual Sales of more than $30M.
+
+Outside of work, Amy enjoys spending time with her animals on her hobby farm and cooking for her family and friends.`,
   },
   {
     name: "Seth Foster",
     role: "President of Innovation & Business Development",
     image: "/images/teams/Seth-President.png",
-    bio: `Seth plays an integral role in transitioning from concept to profitability, generating millions in revenue annually. He leads innovation efforts and manages all sales operations. He holds a Bachelor of Science in Business Marketing and certifications in fitness and nutrition. Seth promotes natural products that are “good for the body, mind, and planet”.`,
+    bio: `Seth plays an integral role in successfully transitioning from concept, to startup, to near immediate profitability, with revenue conversion in the millions of dollars per year with positive cash flow. He is a current patent holder with several others waiting to be awarded and filed.
+
+Seth coordinates most day-to-day operations, leads the team’s innovation efforts, as well as management of all sales efforts.
+
+He earned a Bachelor of Science in Business Marketing from the University of Phoenix; along with accreditations as a Certified Fitness Trainer (CFT) and Certified Sports Performance Nutritionist (CSPN).
+
+Seth's passion for a healthy lifestyle propels him to develop and promote natural and organic products that are, “good for the body, mind, and planet”.`,
   },
   {
     name: "Don Crank",
     role: "Guru of Research & Technology",
     image: "/images/teams/Don-Guruofresearch.png",
-    bio: `Don has 40 years of experience crafting plant-based proteins for food and industrial uses. He specializes in process design and innovation with multiple patents. He holds a degree in Chemical Engineering`,
+    bio: `Don has 40 years’ experience crafting plant-based proteins for food, animal, and industrial uses, including soy, whey, milk, yeast, peas, hempseed, pumpkin, watermelon, sunflower, and other proteins derived from oilseeds, grains, pulses, legumes, and ancient grains.
+
+He has a background in process design, product development, and plant engineering coupled with practical business knowledge which enables him to translate technical processes into financial and operational models with real-time control systems.
+
+Don is responsible for pioneering innovative production methods in the food industry, including 3 patents with others pending.
+
+He holds a degree in Chemical Engineering from the University of Missouri Rolla.`,
   },
   {
     name: "Tim Foster",
     role: "Guru of Engineering",
     image: "/images/teams/Tim-Guruofengineer.png",
-    bio: `Tim has extensive experience in engineering, project management, and corporate leadership. He holds three U.S. paten`,
+    bio: `Tim has multiple experiences in manufacturing and professional settings, including Active Corporate Founder and VP of Engineering, Project Management, Strategic Planning and Implementation Management, Corporate Engineering, Information Technology Management, and was the Director of Public Works for the Municipal Government.
+
+He holds three U.S. patents, one of which is the result of product package design.
+
+Tim studied Mechanical Engineering at Milwaukee School of Engineering.`,
   },
 ];
 
@@ -78,6 +104,8 @@ export default function TeamSection() {
                     alt={member.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    priority={i === 0}
+                    loading={i === 0 ? "eager" : "lazy"}
                     className="object-cover"
                   />
                 </div>
@@ -121,6 +149,8 @@ export default function TeamSection() {
                   src={selected.image}
                   alt={selected.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="eager"
                   className="object-cover object-top md:object-center"
                 />
               </div>
@@ -129,7 +159,7 @@ export default function TeamSection() {
               <div className="p-6 overflow-y-auto scroll-smooth">
                 <h3 className="text-xl font-bold">{selected.name}</h3>
                 <p className="text-primary mb-4">{selected.role}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                   {selected.bio}
                 </p>
               </div>
