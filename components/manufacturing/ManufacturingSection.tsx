@@ -30,7 +30,7 @@ export default function ManufacturingSection() {
             className="max-w-xl"
           >
             {/* BADGE */}
-            <p className="inline-block mb-3 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            <p className="inline-block mb-3 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
               Manufacturing
             </p>
 

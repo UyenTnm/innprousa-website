@@ -121,7 +121,6 @@ export default function CareersPage() {
       </section>
 
       {/* JOB LIST */}
-      {/* JOB LIST */}
       <section className="py-20">
         <div className="container space-y-4">
           {jobs.map((job, i) => (
@@ -179,7 +178,7 @@ export default function CareersPage() {
       <section className="py-20">
         <div className="container">
           <div className="mb-12 max-w-xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+            <p className="mb-2 first-line:text-sm font-semibold uppercase tracking-widest text-primary">
               Hear From Our Team
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
@@ -221,7 +220,7 @@ export default function CareersPage() {
       <section className="surface-subtle py-20">
         <div className="container">
           <div className="mb-8">
-            <p className="text-sm uppercase tracking-widest text-primary font-semibold">
+            <p className="mb-2 text-sm uppercase tracking-widest text-primary font-semibold">
               Why InnPro
             </p>
             <h2 className="font-display text-3xl font-bold text-foreground">

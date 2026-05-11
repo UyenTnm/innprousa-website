@@ -155,7 +155,7 @@ export default function ApplicationsPage() {
         <div className="container grid md:grid-cols-2 gap-10 items-center">
           {/* TEXT */}
           <div>
-            <p className="uppercase text-sm tracking-widest text-muted-foreground">
+            <p className="uppercase text-sm tracking-widest font-semibold text-primary">
               Innovation
             </p>
 

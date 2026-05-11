@@ -40,7 +40,7 @@ export default function WhyInnproSection() {
             variants={fadeUp}
             className="max-w-lg"
           >
-            <p className="inline-block mb-4 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            <p className="inline-block mb-4 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
               Why InnPro
             </p>
 
