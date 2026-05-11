@@ -291,8 +291,11 @@ const About = () => (
               variants={fadeUp}
               className="rounded-lg border border-border bg-card p-8"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-soft">
+              {/* <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-soft">
                 <v.icon className="h-6 w-6 text-primary" />
+              </div> */}
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-primary">
+                <v.icon className="h-5 w-5 text-primary-foreground" />
               </div>
 
               <h3 className="mb-2 font-display text-lg font-semibold text-foreground">
