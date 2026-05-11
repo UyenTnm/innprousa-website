@@ -207,7 +207,7 @@ hover:shadow-md
     font-medium
     text-primary
     visited:text-primary
-    hover:text-accent
+    hover:text-secondary
     active:text-primary
     focus:text-primary
     transition-colors
