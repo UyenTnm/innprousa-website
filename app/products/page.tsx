@@ -65,7 +65,7 @@ lg:min-h-[70vh]
             width={180}
             height={180}
             className="
-      w-24 
+      w-30 
       sm:w-28 
       md:w-36 
       lg:w-44
