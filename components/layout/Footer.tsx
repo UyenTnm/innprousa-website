@@ -215,7 +215,7 @@ hover:shadow-md
     underline-offset-4
   "
           >
-            Staff United Group
+            STAFF United Group
           </a>
         </span>
       </div>
