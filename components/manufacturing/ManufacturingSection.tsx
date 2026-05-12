@@ -78,7 +78,7 @@ export default function ManufacturingSection() {
 
             {/* CTA */}
             <Button variant="cta" asChild>
-              <Link href="/about">Request Samples & Specs</Link>
+              <Link href="/request-sample">Request Samples & Specs</Link>
             </Button>
           </motion.div>
 
