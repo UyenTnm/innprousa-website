@@ -68,14 +68,15 @@ export default function ApplicationsPage() {
       {/* HERO */}
       <section
         className="
-    relative 
-    min-h-[55vh] 
-    sm:min-h-[60vh] 
-    md:min-h-[65vh] 
-    lg:min-h-[70vh] 
+    relative
+    min-h-[55vh]
+    sm:min-h-[60vh]
+    md:min-h-[65vh]
+    lg:min-h-[70vh]
     flex items-center
-    text-white 
+    text-white
     overflow-hidden
+    bg-[#111]
   "
       >
         {/* BACKGROUND IMAGE */}
@@ -84,8 +85,10 @@ export default function ApplicationsPage() {
             src="/images/applications/bg-applications.webp"
             alt="Applications of plant protein"
             fill
-            className="object-cover object-center md:object-[center_60%]"
             priority
+            loading="eager"
+            sizes="100vw"
+            className="object-cover object-center md:object-[center_60%]"
           />
         </div>
 

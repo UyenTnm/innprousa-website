@@ -167,7 +167,7 @@ export default function MapSection() {
             </div>
           </div>
 
-          <div className="absolute top-[46%] left-[29%] text-[14px] sm:text-xs">
+          <div className="absolute top-[45%] left-[25%] text-[14px] sm:text-xs">
             <b>United States</b>
           </div>
 
@@ -190,7 +190,22 @@ lg:top-[53%] lg:left-[70%]"
             <span className="relative inline-flex h-3 w-3 rounded-full bg-green-600"></span>
           </div>
 
-          <div className="absolute top-[65%] left-[70%] text-[10px] sm:text-xs bg-white px-2 py-1 rounded shadow">
+          {/* <div className="absolute top-[65%] left-[70%] text-[10px] sm:text-xs bg-white px-2 py-1 rounded shadow"> */}
+          <div
+            className="
+    absolute
+    top-[56%] left-[69%]
+    md:top-[60%] md:left-[68%]
+    lg:top-[58%] lg:left-[68%]
+    text-[10px] sm:text-xs
+    bg-white/90
+    backdrop-blur-sm
+    px-3 py-2
+    rounded-xl
+    shadow-lg
+    border
+  "
+          >
             <b>Dong Nai</b>
             <br />
             Manufacturing
