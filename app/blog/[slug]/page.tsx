@@ -61,7 +61,7 @@ export default async function BlogDetailPage({ params }: Props) {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* CONTENT */}
         <div className="relative z-10 container flex h-full items-end pb-12 text-white">

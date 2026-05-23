@@ -209,7 +209,7 @@ export default function ContactContent() {
         </div>
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* CONTENT */}
         <div className="relative z-10 container max-w-3xl text-left">

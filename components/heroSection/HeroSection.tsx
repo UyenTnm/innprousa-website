@@ -67,6 +67,7 @@ export default function HeroSection() {
               alt=""
               fill
               sizes="100vw"
+              loading="eager"
               className="object-cover"
             />
           )}

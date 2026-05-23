@@ -52,17 +52,19 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+    // <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/innpro-logo.png"
             alt="InnPro Logo"
+            // sizes="100vw"
+            sizes="160px"
             loading="eager"
             width={120}
             height={40}
-            priority
             className="w-40 h-auto"
           />
         </Link>

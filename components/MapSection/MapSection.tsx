@@ -104,42 +104,37 @@ export default function MapSection() {
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1400px"
             fill
             className="object-contain opacity-40"
-            priority
           />
 
           {/* ===== SVG LINES ===== */}
+          {/* ===== SVG LINES ===== */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 1000 500"
             preserveAspectRatio="none"
           >
             {/* US → India */}
             <path
-              d="M 33% 42% C 50% 25%, 55% 40%, 58% 60%"
+              d="M 330 210 C 470 120, 540 180, 590 300"
               stroke="#3b82f6"
-              strokeWidth="1.5"
+              strokeWidth="2"
+              strokeOpacity="0.8"
               fill="none"
-              strokeDasharray="5 5"
+              strokeDasharray="6 6"
               className="animate-[dash_6s_linear_infinite]"
             />
 
             {/* India → Vietnam */}
             <path
-              d="M 58% 60% C 65% 60%, 68% 60%, 72% 60%"
+              d="M 590 300 C 640 250, 700 235, 715 280"
               stroke="#22c55e"
-              strokeWidth="1.5"
+              strokeWidth="2"
+              strokeOpacity="0.8"
               fill="none"
-              strokeDasharray="5 5"
+              strokeDasharray="6 6"
               className="animate-[dash_6s_linear_infinite]"
             />
           </svg>
-
-          {/* ===== US CLUSTER ===== */}
-          {/* <div
-            onMouseEnter={() => setOpenUS(true)}
-            className="absolute top-[42%] left-[33%] cursor-pointer"
-          >
-            <div className="w-3 h-3 bg-blue-600 rounded-full" />
-          </div> */}
 
           <div
             onMouseEnter={() => {

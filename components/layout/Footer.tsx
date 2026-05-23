@@ -20,7 +20,7 @@ const Footer = () => (
                 alt="InnPro Logo"
                 width={120}
                 height={40}
-                loading="eager"
+                sizes="100vw"
                 priority
                 className="w-40 h-auto"
               />

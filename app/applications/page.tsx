@@ -93,7 +93,7 @@ export default function ApplicationsPage() {
         </div>
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* CONTENT */}
         <div className="relative z-10 container max-w-3xl text-left">
@@ -183,11 +183,18 @@ export default function ApplicationsPage() {
 
           {/* IMAGE */}
           <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden">
-            <Image
+            {/* <Image
               src="/images/concepts/hero-protein-coffee1.webp"
               alt="Concept development"
               fill
               sizes="100vw"
+              className="object-cover"
+            /> */}
+            <Image
+              src="/images/concepts/hero-protein-coffee1.webp"
+              alt="Concept development"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
