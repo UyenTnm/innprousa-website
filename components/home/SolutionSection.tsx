@@ -7,25 +7,25 @@ const solutions = [
     icon: FlaskConical,
     title: "Precision-Engineered Ingredients",
     description:
-      "Every batch meets strict protein content, solubility, and functionality specifications.",
+      "Designed for clean flavor, optimized nutrition, and superior functional performance across modern food systems.",
   },
   {
     icon: Zap,
     title: "Scalable Manufacturing",
     description:
-      "From 100kg samples to 50,000 MT annually - our facility scales with your growth.",
+      "From one kilo samples to mass production - our ability scales with your growth.",
   },
   {
     icon: Leaf,
-    title: "Sustainable Sourcing",
+    title: "Reliable Supply Chain",
     description:
-      "Traceable supply chains with verified sustainability credentials at every stage.",
+      "Consistent ingredient sourcing and manufacturing processes designed for long-term commercial stability.",
   },
   {
     icon: BarChart3,
     title: "Technical Partnership",
     description:
-      "Dedicated R&D support from concept through commercialization for every customer.",
+      "Collaborative formulation support from early development through commercial production.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function SolutionSection() {
           viewport={{ once: true }}
           custom={0}
           variants={fadeUp}
-          className="mb-12 max-w-xl"
+          className="mb-14 max-w-2xl"
         >
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             Our Approach
@@ -57,7 +57,7 @@ export default function SolutionSection() {
               viewport={{ once: true }}
               custom={i}
               variants={fadeUp}
-              className="rounded-lg border border-border bg-card p-6"
+              className="rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30"
             >
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-primary">
                 <item.icon className="h-5 w-5 text-primary-foreground" />

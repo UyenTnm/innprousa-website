@@ -27,9 +27,9 @@ export default function MapSection() {
           <h2 className="text-3xl md:text-4xl font-bold">Where We Operate</h2>
 
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            InnPro operates across the United States, Vietnam, and India —
-            combining R&D expertise with large-scale manufacturing to support
-            global food and nutrition companies.
+            InnPro operates across the United States and Vietnam — combining
+            ingredient innovation, scalable manufacturing, and technical
+            expertise to support global food and nutrition companies.
           </p>
 
           {/* CARDS */}
@@ -73,7 +73,7 @@ export default function MapSection() {
             </div>
 
             {/* ===== INDIA ===== */}
-            <div className="flex gap-4 p-5 rounded-xl border bg-white shadow-sm hover:shadow-md transition">
+            {/* <div className="flex gap-4 p-5 rounded-xl border bg-white shadow-sm hover:shadow-md transition">
               <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold">
                 IN
               </div>
@@ -85,7 +85,7 @@ export default function MapSection() {
                   Partner manufacturing network
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
 
@@ -107,14 +107,13 @@ export default function MapSection() {
           />
 
           {/* ===== SVG LINES ===== */}
-          {/* ===== SVG LINES ===== */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
             viewBox="0 0 1000 500"
             preserveAspectRatio="none"
           >
             {/* US → India */}
-            <path
+            {/* <path
               d="M 330 210 C 470 120, 540 180, 590 300"
               stroke="#3b82f6"
               strokeWidth="2"
@@ -122,10 +121,10 @@ export default function MapSection() {
               fill="none"
               strokeDasharray="6 6"
               className="animate-[dash_6s_linear_infinite]"
-            />
+            /> */}
 
             {/* India → Vietnam */}
-            <path
+            {/* <path
               d="M 590 300 C 640 250, 700 235, 715 280"
               stroke="#22c55e"
               strokeWidth="2"
@@ -133,7 +132,7 @@ export default function MapSection() {
               fill="none"
               strokeDasharray="6 6"
               className="animate-[dash_6s_linear_infinite]"
-            />
+            /> */}
           </svg>
 
           <div
@@ -167,13 +166,13 @@ export default function MapSection() {
           </div>
 
           {/* ===== INDIA ===== */}
-          <div className="absolute top-[60%] left-[58%]">
+          {/* <div className="absolute top-[60%] left-[58%]">
             <div className="w-3 h-3 bg-gray-400 rounded-full" />
-          </div>
+          </div> */}
 
-          <div className="absolute top-[63%] left-[57%] text-[10px] sm:text-xs">
+          {/* <div className="absolute top-[63%] left-[57%] text-[10px] sm:text-xs">
             India
-          </div>
+          </div> */}
 
           {/* ===== VIETNAM (FOCUS) ===== */}
           <div
@@ -207,56 +206,7 @@ lg:top-[53%] lg:left-[70%]"
           </div>
         </motion.div>
       </div>
-      {/* {openUS && (
-        <div
-          className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur-sm flex items-center justify-center"
-          onMouseLeave={() => {
-            setTimeout(() => setOpenUS(false), 150);
-          }}
-        >
-          <div
-            className="bg-white rounded-2xl p-6 w-[90%] max-w-4xl relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setOpenUS(false)}
-              className="absolute top-3 right-3 text-sm"
-            >
-              ✕
-            </button>
 
-            <h3 className="text-xl font-bold mb-4">United States Operations</h3>
-
-            <div className="relative w-full h-[400px]">
-              <Image
-                src="/images/usa-map.svg"
-                alt="US Map"
-                fill
-                className="object-contain"
-              />
-
-              <div className="absolute top-[55%] left-[38%] text-xs">
-                ⭐ Dakota Dunes (HQ)
-              </div>
-
-              <div className="absolute top-[50%] left-[42%] flex items-center gap-1 text-xs">
-                <span className="w-2 h-2 bg-green-600 rounded-full"></span>
-                <span>Austin (R&D)</span>
-              </div>
-
-              <div className="absolute top-[40%] left-[48%] flex items-center gap-1 text-xs">
-                <span className="w-2 h-2 bg-green-600 rounded-full"></span>
-                St. Paul (R&D)
-              </div>
-
-              <div className="absolute top-[65%] left-[60%] flex items-center gap-1 text-xs">
-                <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                <span>Mooresville (Processing)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
       {openUS && (
         <div
           className="fixed inset-0 z-[9999] bg-black/30 backdrop-blur-sm flex items-center justify-center transition-all duration-300"
@@ -264,7 +214,19 @@ lg:top-[53%] lg:left-[70%]"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-2xl p-6 w-[90%] max-w-4xl relative animate-in fade-in zoom-in duration-300 shadow-2xl"
+            className="
+bg-white
+rounded-2xl
+p-4 sm:p-6
+w-[95%]
+max-w-4xl
+relative
+animate-in fade-in zoom-in duration-300
+shadow-2xl
+
+max-h-[90vh]
+overflow-y-auto
+"
           >
             {/* CLOSE */}
             <button
@@ -278,7 +240,7 @@ lg:top-[53%] lg:left-[70%]"
             <h3 className="text-xl font-bold mb-4">United States Operations</h3>
 
             {/* MAP */}
-            <div className="relative w-full h-[400px]">
+            <div className="relative w-full h-[280px] sm:h-[360px] md:h-[500px]">
               <Image
                 src="/images/usa-map.svg"
                 alt="US Map"
@@ -287,26 +249,44 @@ lg:top-[53%] lg:left-[70%]"
               />
 
               {/* Dakota */}
-              <div className="absolute top-[55%] left-[38%] text-xs">
-                ⭐ Dakota Dunes (HQ)
+              <div
+                className="absolute top-[39%] left-[45%]
+sm:top-[37%] sm:left-[45%] text-xs font-bold backdrop-blur-[3px]"
+              >
+                ⭐ Dakota Dunes, SD
               </div>
 
               {/* Austin */}
-              <div className="absolute top-[50%] left-[42%] flex items-center gap-1 text-xs">
+              {/* <div className="absolute top-[50%] left-[42%] flex items-center gap-1 text-xs">
                 <span className="w-2 h-2 bg-green-600 rounded-full"></span>
                 <span>Austin (R&D)</span>
-              </div>
+              </div> */}
 
               {/* St Paul */}
-              <div className="absolute top-[40%] left-[48%] flex items-center gap-1 text-xs">
+              <div
+                className="absolute top-[32%] left-[56%]
+sm:top-[28%] sm:left-[55%] flex items-center gap-1 text-xs font-bold backdrop-blur-[3px]"
+              >
                 <span className="w-2 h-2 bg-green-600 rounded-full"></span>
-                St. Paul (R&D)
+                St. Paul, MN
               </div>
 
               {/* Mooresville */}
-              <div className="absolute top-[65%] left-[60%] flex items-center gap-1 text-xs">
+              <div
+                className="absolute top-[44%] left-[69%]
+sm:top-[44%] sm:left-[69%] flex items-center gap-1 text-xs font-bold backdrop-blur-[3px]"
+              >
                 <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                <span>Mooresville (Processing)</span>
+                <span>Mooresville, IN</span>
+              </div>
+              {/* Fosston, MN
+               */}
+              <div
+                className="absolute top-[23%] left-[55%]
+    sm:top-[17%] sm:left-[54%] flex items-center gap-1 text-xs font-bold backdrop-blur-[3px]"
+              >
+                <span className="w-2 h-2 bg-green-600 rounded-full"></span>
+                <span>Fosston, MN</span>
               </div>
             </div>
           </div>

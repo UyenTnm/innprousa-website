@@ -8,7 +8,7 @@ export default function TechnologySection({
   console.log("variant: ", variant);
   return (
     <section
-      className={`relative py-20 md:py-28 ${
+      className={`relative pt-12 pb-16 md:pt-16 md:pb-24 ${
         variant === "products" ? "bg-white" : "overflow-hidden"
       }`}
     >
@@ -25,7 +25,7 @@ export default function TechnologySection({
             <source src="/videos/protein-platform-video.mp4" type="video/mp4" />
           </video>
 
-          <div className="absolute inset-0 bg-white/40 backdrop-blur-[4px]" />
+          <div className="absolute inset-0 bg-white/40 backdrop-blur-[3px]" />
         </>
       )}
 
@@ -46,10 +46,10 @@ export default function TechnologySection({
           <Image
             src="/images/pro1.png"
             alt="Profectein"
-            width={200}
+            width={260}
             height={60}
             style={{
-              width: "200px",
+              width: "260px",
               height: "auto",
             }}
             className="object-contain"
@@ -58,33 +58,34 @@ export default function TechnologySection({
 
         <h2 className="mb-6 text-3xl md:text-4xl font-bold leading-tight">
           {variant === "products"
-            ? "Profectin™ Protein Platform"
-            : "Pea Protein Platform Engineered for Performance"}
+            ? "PROFECTEIN™ Protein Platform"
+            : "One-to-One Whey Protein Replacement Powered by PROFECTEIN™"}
         </h2>
 
         <p className="mb-10 max-w-2xl mx-auto text-gray-700 leading-relaxed">
-          Developed using proprietary processing technologies, delivering
-          superior solubility, clean taste profile, and scalable performance
-          across diverse food and beverage applications.
+          Developed using proprietary processing technologies delivering clean
+          sensory performance, optimized nutrition, and scalable formulation
+          functionality across modern food and beverage systems.
         </p>
 
         {/* Advantages → FIX style */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {[
-            "High Functionality",
+            "One-to-One Whey Replacement",
             "Clean Sensory Profile",
             "Optimized Nutrition",
-            "Formulation Versatility",
+            "High Functionality",
+            "Formula Versatility",
           ].map((item) => (
             <div
               key={item}
               className="
-        rounded-lg
+        rounded-2xl
         border border-gray-200
         px-4 py-3
         text-sm
         bg-white
-        shadow-sm
+        shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/20
         flex items-center justify-center
         text-center
       "

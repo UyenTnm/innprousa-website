@@ -8,12 +8,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const certifications = [
+  "GFSI Certified",
   "ISO 22000 Certified",
-  "FSSC 22000 Compliant",
-  "Allergen-Free Facility",
-  "Halal & Kosher Ready",
-  "Automated QC Systems",
   "Full Traceability",
+  "Allergen-Free Facility",
+  "Halal & Kosher Certified",
+  "Organic Certified",
 ];
 
 export default function ManufacturingSection() {
@@ -41,32 +41,17 @@ export default function ManufacturingSection() {
 
             {/* DESC */}
             <p className="mb-6 text-sm text-muted-foreground leading-relaxed">
-              Our facility is designed exclusively for plant-based protein
-              processing — eliminating cross-contamination risks and ensuring
-              consistent, high-performance output at scale.
+              Designed to support scalable plant protein manufacturing with
+              consistent ingredient quality, traceability, and formulation
+              reliability.
             </p>
-
-            <div className="flex gap-6 text-sm mb-6">
-              <div>
-                <p className="font-bold text-primary text-lg">50K MT</p>
-                <p className="text-muted-foreground">Annual Capacity</p>
-              </div>
-              <div>
-                <p className="font-bold text-primary text-lg">24/7</p>
-                <p className="text-muted-foreground">Production</p>
-              </div>
-              <div>
-                <p className="font-bold text-primary text-lg">100%</p>
-                <p className="text-muted-foreground">Traceability</p>
-              </div>
-            </div>
 
             {/* CERTIFICATIONS */}
             <ul className="grid gap-3 sm:grid-cols-2 mb-8">
               {certifications.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 bg-white px-3 py-2 rounded-md border"
+                  className="flex items-center gap-2 bg-white px-3 py-2 rounded-xl border"
                 >
                   <ShieldCheck className="h-4 w-4 text-primary flex-shrink-0" />
                   <span className="text-sm font-medium text-foreground">
@@ -88,7 +73,7 @@ export default function ManufacturingSection() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="relative overflow-hidden rounded-xl shadow-lg"
+            className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
           >
             {/* VIDEO */}
             <video

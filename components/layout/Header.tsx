@@ -88,10 +88,14 @@ export default function Header() {
         </nav>
 
         {/* CTA */}
+        {/* CTA */}
+        {/* CTA */}
         <div className="hidden lg:block">
           <Button
-            className={`text-white ${
-              isSamplePage ? "bg-[#5A8E36]" : "bg-secondary hover:bg-[#5A8E36]"
+            className={`text-white transition-all duration-300 ${
+              isSamplePage
+                ? "!bg-[#005E79] hover:!bg-[#004C63] ring-2 ring-[#007497]/20"
+                : "!bg-[#007497] hover:!bg-[#00627F]"
             }`}
             asChild
           >
@@ -121,10 +125,15 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`px-3 py-2 text-sm font-medium rounded-md ${
+                // className={`px-3 py-2 text-sm font-medium rounded-md ${
+                //   isActive(item.href)
+                //     ? "text-white bg-secondary"
+                //     : "text-muted-foreground hover:text-foreground"
+                // }`}
+                className={`px-3 py-2 text-base font-medium rounded-md transition-colors ${
                   isActive(item.href)
-                    ? "text-white bg-secondary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-[#007497] bg-[#007497]/10"
+                    : "text-foreground hover:text-[#007497] hover:bg-[#007497]/10"
                 }`}
               >
                 {item.label}
@@ -132,8 +141,11 @@ export default function Header() {
             ))}
 
             <Button
-              variant="cta"
-              className={`mt-2 ${isSamplePage ? "bg-[#5A8E36]" : ""}`}
+              className={`mt-2 text-white transition-all duration-300 ${
+                isSamplePage
+                  ? "!bg-[#005E79] hover:!bg-[#004C63] ring-2 ring-[#007497]/20"
+                  : "!bg-[#007497] hover:!bg-[#00627F]"
+              }`}
               asChild
             >
               <Link href="/request-sample" onClick={() => setMobileOpen(false)}>

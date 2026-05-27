@@ -7,23 +7,23 @@ import { Beaker, Factory, Settings, Leaf } from "lucide-react";
 const items = [
   {
     icon: Beaker,
-    title: "Process, Not Commodity",
-    desc: "Protein performance is defined by process not raw material selection.",
+    title: "Innovation and Partnership",
+    desc: "Collaborative ingredient development and technical support designed to accelerate commercial food formulation.",
   },
   {
     icon: Factory,
-    title: "Control Across Value Chain",
-    desc: "End-to-end integration ensures consistency, traceability, and supply reliability.",
+    title: "Quality and Consistency",
+    desc: "Consistent ingredient performance and manufacturing reliability across commercial-scale production.",
   },
   {
     icon: Settings,
-    title: "Built for Real Formulation",
-    desc: "Designed to perform in real systems supporting stability, texture, and sensory quality.",
+    title: "Process, Not Commodity",
+    desc: "Protein performance is defined by process, and ease of formulation use.",
   },
   {
     icon: Leaf,
-    title: "Clean Label Without Compromise",
-    desc: "Clean-label ingredients without sacrificing functionality or nutrition.",
+    title: "Transparency and Traceability",
+    desc: "Integrated manufacturing and sourcing systems supporting traceability and long-term supply confidence.",
   },
 ];
 
@@ -49,8 +49,8 @@ export default function WhyInnproSection() {
             </h2>
 
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              InnPro&apos;s advantage is not just in ingredients — it is in how
-              they are engineered, processed, and delivered.
+              InnPro combines proprietary processing, scalable manufacturing,
+              and formulation expertise to support modern food innovation.
             </p>
 
             {/* BIG HIGHLIGHT */}
@@ -78,7 +78,7 @@ export default function WhyInnproSection() {
                 viewport={{ once: true }}
                 custom={i}
                 variants={fadeUp}
-                className="group relative rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
+                className="group relative rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
               >
                 {/* TOP */}
                 <div>
@@ -88,7 +88,7 @@ export default function WhyInnproSection() {
                   </div>
 
                   {/* TITLE (fix chiều cao) */}
-                  <h3 className="mb-2 font-semibold text-lg min-h-[48px]">
+                  <h3 className="mb-2 font-semibold text-lg min-h-[56px]">
                     {item.title}
                   </h3>
                 </div>

@@ -4,15 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Milk,
-  Utensils,
-  Dumbbell,
-  Cookie,
-  Salad,
-  Pill,
-} from "lucide-react";
+import { ArrowRight, Milk, Dumbbell, Cookie, Salad, Pill } from "lucide-react";
 
 import { fadeUp } from "@/lib/animations";
 import Image from "next/image";
@@ -20,37 +12,38 @@ import Image from "next/image";
 const applications = [
   {
     icon: Milk,
-    title: "Beverages & RTD",
+    title: "Whey Protein Replacement",
     description:
-      "High-solubility proteins for clear and opaque beverage formulations with stable suspension.",
-    products: ["Pea Protein Isolate", "Custom Blends"],
-  },
-  {
-    icon: Utensils,
-    title: "Meat Analogues",
-    description:
-      "Textured proteins with binding and fibrous characteristics for next-gen meat alternatives.",
+      "One-to-one replacement for whey protein and whey protein concentrate.",
     products: ["Pea Protein Isolate", "Rice Protein Concentrate"],
   },
+
+  {
+    icon: Milk,
+    title: "Beverages & RTD",
+    description:
+      "High solubility and varying viscosities for beverage formulations with stable suspension.",
+    products: ["Pea Protein Isolate", "Custom Blends"],
+  },
+
   {
     icon: Dumbbell,
     title: "Sports Nutrition",
     description:
-      "Complete amino acid profiles optimized for muscle recovery and performance supplementation.",
+      "Allergen-free and high protein content for muscle recovery and performance supplementation.",
     products: ["Pea Protein Isolate", "Rice Protein Concentrate"],
   },
   {
     icon: Cookie,
-    title: "Bakery & Snacks",
-    description:
-      "Heat-stable proteins that maintain structure and nutrition through baking processes.",
+    title: "Bakery, Snacks & Extrusion",
+    description: "Proteins can support a wide range of application use.",
     products: ["Rice Protein Concentrate", "Custom Blends"],
   },
   {
     icon: Salad,
     title: "Dairy Alternatives",
     description:
-      "Proteins with foaming and gelation properties suited for yogurt, cheese, and cream analogues.",
+      "Our ultra-clean flavor and smooth texture allow for a one-to-one replacement in many dairy formulations, saving money and improving supply chain stability.",
     products: ["Pea Protein Isolate", "Custom Blends"],
   },
   {
@@ -124,9 +117,9 @@ export default function ApplicationsPage() {
               viewport={{ once: true }}
               custom={i}
               variants={fadeUp}
-              className="rounded-lg border border-border bg-card p-8 flex flex-col h-full"
+              className="rounded-2xl border border-border bg-card p-8 flex flex-col h-full transition-all duration-300 hover:-transalte-y-1 hover:shadow-xl cursor-pointer"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-soft">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft">
                 <app.icon className="h-6 w-6 text-primary" />
               </div>
 
@@ -142,7 +135,7 @@ export default function ApplicationsPage() {
                 {app.products.map((p) => (
                   <span
                     key={p}
-                    className="rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground"
+                    className="rounded-md bg-secondary/90 px-2 py-1 text-xs font-medium text-secondary-foreground"
                   >
                     {p}
                   </span>
@@ -150,54 +143,6 @@ export default function ApplicationsPage() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* CONCEPT DEVELOPMENT */}
-      <section className="py-20 bg-gray-50">
-        <div className="container grid md:grid-cols-2 gap-10 items-center">
-          {/* TEXT */}
-          <div>
-            <p className="uppercase text-sm tracking-widest font-semibold text-primary">
-              Innovation
-            </p>
-
-            <h2 className="text-3xl md:text-4xl font-bold mt-3">
-              Concept Development
-            </h2>
-
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              We go beyond ingredients. Our team develops retail ready product
-              concepts from high-protein noodles to functional beverages
-              designed to help your brand stand out on shelf.
-            </p>
-
-            <div className="mt-6">
-              <Button asChild>
-                <Link href="/applications/concepts">
-                  Explore Concepts <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-
-          {/* IMAGE */}
-          <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden">
-            {/* <Image
-              src="/images/concepts/hero-protein-coffee1.webp"
-              alt="Concept development"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            /> */}
-            <Image
-              src="/images/concepts/hero-protein-coffee1.webp"
-              alt="Concept development"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
         </div>
       </section>
 
@@ -214,7 +159,8 @@ export default function ApplicationsPage() {
 
           <Button variant="hero" size="lg" asChild>
             <Link href="/contact">
-              Talk to Our Team <ArrowRight className="ml-1 h-4 w-4" />
+              Speak with a Formulation Expert{" "}
+              <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
         </div>

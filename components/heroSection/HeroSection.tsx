@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,29 +10,22 @@ const slides = [
   {
     type: "video",
     image: "/videos/factory-demo.mp4",
-    title: "Engineered Plant Proteins for Scalable Food Production",
-    desc: "High-purity plant protein ingredients designed for performance, consistency, and large-scale manufacturing.",
+    title: "One-to-One Whey Protein Replacement for Modern Food Formulation",
+    desc: "High-purity functional plant proteins engineered for clean flavor, optimized nutrition, and commercial-scale manufacturing.",
   },
   {
     type: "image",
     image: "/images/hero/hero2.jpg",
-    title: "Consistent Quality at Commercial Scale",
+    title: "Consistent Functional Performance at Commercial Scale",
     desc: "Reliable supply and functional performance across every batch.",
   },
   {
     type: "image",
 
     image: "/images/hero/hero3.jpeg",
-    title: "Science-Driven Ingredient Solutions",
-    desc: "Advanced filtration technology delivering superior solubility and taste.",
+    title: "Advanced Processing for Superior Sensory Performance",
+    desc: "Advanced processing technologies delivering improved solubility, clean flavor, and functional performance.",
   },
-];
-
-const stats = [
-  { value: "20+", label: "Years Experience" },
-  { value: "200+", label: "Formulations" },
-  { value: "50K MT", label: "Annual Capacity" },
-  { value: "99.6%", label: "Consistency" },
 ];
 
 export default function HeroSection() {
@@ -95,11 +88,20 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-xl md:max-w-2xl"
+            // className="max-w-xl md:max-w-2xl"
+            className="max-w-3xl"
           >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
-              Plant Protein Ingredients
-            </p>
+            <div className="mb-5 flex flex-wrap items-center gap-3">
+              <div className="rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-md">
+                <span className="text-sm font-semibold tracking-wide text-white">
+                  15+ Years Experience
+                </span>
+              </div>
+
+              <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+                Plant Protein Ingredients
+              </p>
+            </div>
 
             <h1 className="mb-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               {slides[index].title}
@@ -131,27 +133,6 @@ export default function HeroSection() {
                 i === index ? "bg-white w-4" : "bg-white/50"
               }`}
             />
-          ))}
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="border-b border-border bg-card">
-        <div className="container max-w-[1400px] grid grid-cols-2 md:grid-cols-4 gap-6 py-10 md:py-12 text-center">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <div className="text-2xl md:text-3xl font-bold text-primary">
-                {stat.value}
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                {stat.label}
-              </div>
-            </motion.div>
           ))}
         </div>
       </section>

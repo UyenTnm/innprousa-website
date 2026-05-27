@@ -5,21 +5,21 @@ import { Beaker, Factory, ShieldCheck } from "lucide-react";
 const problems = [
   {
     icon: Beaker,
-    title: "Inconsistent Protein Quality",
+    title: "Poor Organoleptics",
     description:
-      "Batch-to-batch variation disrupts your formulation timelines and final product consistency.",
+      "Clean flavor, texture, and mouthfeel remain major limitations in many plant protein systems.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Lacking Nutritional Equivalency",
+    description:
+      "Many plant proteins struggle to match the nutritional balance, protein density, and functional performance expected from dairy-based systems.",
   },
   {
     icon: Factory,
     title: "Scaling Challenges",
     description:
       "Moving from pilot to full production requires a partner with proven manufacturing infrastructure.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Regulatory Complexity",
-    description:
-      "Navigating global food safety certifications demands deep technical and regulatory expertise.",
   },
 ];
 
@@ -33,13 +33,13 @@ export default function ProblemSection() {
           viewport={{ once: true }}
           custom={0}
           variants={fadeUp}
-          className="mb-12 max-w-xl"
+          className="mb-14 max-w-2xl"
         >
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             The Challenge
           </p>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-            Why Most Protein Ingredients Fall Short
+            Why Most Protein Plant Protein Ingredients Fall Short
           </h2>
         </motion.div>
         <div className="grid gap-8 md:grid-cols-3">
@@ -51,12 +51,8 @@ export default function ProblemSection() {
               viewport={{ once: true }}
               custom={i}
               variants={fadeUp}
-              className="rounded-lg border border-border bg-card p-8"
+              className="rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30"
             >
-              {/* <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-soft"> */}
-              {/* <item.icon className="h-6 w-6 text-primary" /> */}
-              <item.icon className="h-5 w-5 text-primary-foreground" />
-
               {/* </div> */}
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-primary">
                 <item.icon className="h-5 w-5 text-primary-foreground" />

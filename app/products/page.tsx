@@ -7,32 +7,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { fadeUp } from "@/lib/animations";
 import { products } from "@/lib/data/products";
+import { Clock3 } from "lucide-react";
 
 export default function ProductsPage() {
   return (
     <>
-      {/* HERO */}
-      {/* <section className="hero-gradient py-20 md:py-28">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-2xl"
-          >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
-              Product Catalog
-            </p>
-            <h1 className="mb-4 font-display text-4xl font-bold text-primary-foreground md:text-5xl">
-              Plant Protein Ingredients
-            </h1>
-            <p className="text-lg text-primary-foreground/80">
-              High-purity, functionally engineered proteins for food
-              manufacturing.
-            </p>
-          </motion.div>
-        </div>
-      </section> */}
       <section
         className="relative 
   min-h-[72vh]
@@ -92,7 +71,7 @@ lg:min-h-[70vh]
             Product Catalog
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mt-3">
-            Profectin™ Protein Platform
+            PROFECTEIN™ Protein Platform
           </h1>
           <p className="mt-4 opacity-90">
             High-purity, functionally engineered proteins designed for modern
@@ -212,7 +191,10 @@ max-w-sm sm:max-w-md"
                         Enhanced mouthfeel & texture
                       </span>
                       <span className="bg-muted px-2 py-1 rounded">
-                        Low sodium content
+                        Extrusion
+                      </span>
+                      <span className="bg-muted px-2 py-1 rounded">
+                        Ready-To-Mix
                       </span>
                       <span className="bg-muted px-2 py-1 rounded">
                         Non-GMO, vegan, allergen-free
@@ -249,14 +231,33 @@ max-w-sm sm:max-w-md"
                       />
                     </div>
 
-                    <Button variant="cta" className="w-full" asChild>
-                      <Link href={`/contact?product-${product.slug}`}>
-                        Request Sample
-                      </Link>
-                    </Button>
-                    {/* <Button variant="outline" className="w-full" asChild>
-                      <Link href="#">Download Specs</Link>
-                    </Button> */}
+                    {product.name === "PROFECTEIN™ 1.5" ? (
+                      <Button
+                        className="
+    w-full
+    rounded-xl
+    border border-amber-200
+    bg-amber-50
+    text-amber-700
+    font-medium
+    cursor-not-allowed
+    hover:bg-amber-50
+    hover:text-amber-700
+    shadow-sm
+    transition-none
+  "
+                        disabled
+                      >
+                        <Clock3 className="mr-2 h-4 w-4" />
+                        Coming Soon
+                      </Button>
+                    ) : (
+                      <Button variant="cta" className="w-full" asChild>
+                        <Link href={`/contact?product=${product.slug}`}>
+                          Request Sample
+                        </Link>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </motion.div>

@@ -22,6 +22,12 @@ import TeamSection from "@/components/team/TeamSection";
 ========================= */
 const values = [
   {
+    icon: Lightbulb,
+    title: "Innovation & Partnership",
+    description:
+      "We continuously invest in processing technology and collaborate with our partners to develop scalable, functional solutions.",
+  },
+  {
     icon: Target,
     title: "Quality & Consistency",
     description:
@@ -33,13 +39,9 @@ const values = [
     description:
       "We provide full transparency across our supply chain, ensuring traceability from raw materials to finished products.",
   },
-  {
-    icon: Lightbulb,
-    title: "Innovation & Partnership",
-    description:
-      "We continuously invest in processing technology and collaborate with our partners to develop scalable, functional solutions.",
-  },
 ];
+
+// TODO: Awaiting updated company milestones from Seth
 
 /* =========================
    TIMELINE (Safe + Professional)
@@ -148,7 +150,9 @@ const About = () => (
         <p className="mt-4 opacity-90 max-w-xl leading-relaxed">
           InnPro is a U.S.-based food science and agri-biotech company advancing
           plant-based nutrition through proprietary processing and ingredient
-          innovation, ensuring consistency, scalability, and product quality.
+          innovation, ensuring consistency, scalability, and product quality. We
+          are one of the few companies able to offer commercial quantities of
+          whey protein and whey protein concentrate reformulations.
         </p>
       </div>
     </section>
@@ -187,8 +191,8 @@ const About = () => (
           <p className="text-muted-foreground leading-relaxed">
             We combine expertise in food science, processing technology, and
             quality control to ensure that every batch meets the technical
-            requirements of our customers, from protein content and solubility
-            to flavor and color.
+            requirements of our customers, from protein content, solubility,
+            flavor, and texture.
           </p>
         </motion.div>
 
@@ -198,7 +202,7 @@ const About = () => (
           viewport={{ once: true }}
           custom={1}
           variants={fadeUp}
-          className="rounded-lg overflow-hidden"
+          className="rounded-3xl overflow-hidden shadow-xl"
         >
           <Image
             src="/images/about/manufacturing.webp"
@@ -289,7 +293,7 @@ const About = () => (
               viewport={{ once: true }}
               custom={i}
               variants={fadeUp}
-              className="rounded-lg border border-border bg-card p-8"
+              className="rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
               {/* <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-soft">
                 <v.icon className="h-6 w-6 text-primary" />
@@ -342,7 +346,7 @@ const About = () => (
               viewport={{ once: true }}
               custom={i}
               variants={fadeUp}
-              className="flex gap-4 rounded-lg border bg-card p-6 border-l-4 border-primary transition hover:shadow-lg hover:-translate-y-1"
+              className="flex gap-4 rounded-2xl border bg-card p-6 border-l-4 border-primary transition hover:shadow-lg hover:-translate-y-1"
             >
               <span className="text-xl font-bold text-primary min-w-[60px]">
                 {t.year}

@@ -6,24 +6,29 @@ import { Coffee, Droplet, Dumbbell, Leaf } from "lucide-react";
 
 const applications = [
   {
-    icon: Coffee,
-    title: "Functional Beverages",
-    desc: "High solubility, smooth mouthfeel, neutral taste profile",
+    icon: Droplet,
+    title: "Whey Protein Replacement",
+    desc: "One-to-one replacement for whey protein and whey protein concentrate.",
   },
   {
-    icon: Droplet,
-    title: "Dairy Alternatives",
-    desc: "Stable emulsification, creamy texture, clean label formulation",
+    icon: Coffee,
+    title: "Beverages & RTD",
+    desc: "High solubility and varying viscosities for beverage formulations with stable suspension.",
   },
   {
     icon: Dumbbell,
     title: "Sports Nutrition",
-    desc: "High protein density, fast absorption, excellent mixability",
+    desc: "Allergen-free and high protein content for muscle recovery and performance supplementation.",
   },
   {
     icon: Leaf,
-    title: "Plant-Based Foods",
-    desc: "Strong binding, fibrous texture, heat stability",
+    title: "Bakery, Snacks & Extrusion",
+    desc: "Proteins can support a wide range of application use.",
+  },
+  {
+    icon: Droplet,
+    title: "Dairy Alternatives",
+    desc: "Our ultra-clean flavor and smooth texture allow for a one-to-one replacement in many dairy formulations, saving money and improving supply chain stability.",
   },
 ];
 
@@ -66,7 +71,8 @@ export default function ApplicationSlider() {
           </h2>
 
           <p className="mt-3 text-muted-foreground">
-            Designed for real-world food systems.
+            Designed to support modern formulations across beverage, nutrition,
+            dairy alternative, and extrusion systems.
           </p>
         </div>
 
@@ -98,36 +104,14 @@ export default function ApplicationSlider() {
             {loopItems.map((item, i) => (
               <div
                 key={i}
-                className="
-  min-w-[88%]
-
-xs:min-w-[82%]
-
-sm:min-w-[68%]
-
-md:min-w-[360px]
-
-lg:min-w-[380px]
-
-  flex-shrink-0
-
-  snap-start
-
-  rounded-3xl
-
-  border border-border
-
-  bg-white
-
-  p-6 md:p-7
-
-  transition-all duration-300
-
-  hover:shadow-2xl
-  hover:-translate-y-2
-
+                className={`
+  w-[88vw]
+sm:w-[420px]
+md:w-[460px]
+  flex-shrink-0 snap-start rounded-3xl border bg-white flex flex-col p-6 md:p-7 transition-all duration-300hover:shadow-2xl hover:-translate-y-2
   hover:border-primary/20
-"
+  ${i === 0 ? "border-primary/30 bg-primary/[0.03]" : "border-border"}
+`}
               >
                 <div
                   className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl

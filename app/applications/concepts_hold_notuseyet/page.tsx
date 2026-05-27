@@ -52,7 +52,7 @@ export default function ConceptsPage() {
       </section>
 
       {/* LIST */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container space-y-20">
           {concepts.map((item, i) => (
             <motion.div
@@ -89,7 +89,7 @@ export default function ConceptsPage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="py-20 bg-gray-50 text-center">

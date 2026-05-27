@@ -175,7 +175,7 @@ export default function CareersPage() {
       </section>
 
       {/* TESTIMONIAL */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container">
           <div className="mb-12 max-w-xl">
             <p className="mb-2 first-line:text-sm font-semibold uppercase tracking-widest text-primary">
@@ -199,12 +199,10 @@ export default function CareersPage() {
                 <p className="text-sm text-muted-foreground">“{item.quote}”</p>
 
                 <div className="mt-4 flex items-center gap-3">
-                  {/* Avatar */}
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white font-semibold">
                     {item.name.charAt(0)}
                   </div>
 
-                  {/* Info */}
                   <div>
                     <p className="font-semibold">{item.name}</p>
                     <p className="text-xs text-muted-foreground">{item.role}</p>
@@ -214,7 +212,7 @@ export default function CareersPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* BENEFITS */}
       <section className="surface-subtle py-20">

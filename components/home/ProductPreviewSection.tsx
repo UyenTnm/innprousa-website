@@ -12,7 +12,7 @@ const products = [
     protein: "High purity",
     benefits: [
       "Neutral taste profile",
-      "Commercial quantities available",
+      "One-to-one whey protein replacement",
       "Reliable across standard formulations",
     ],
     // applications: "Beverages, RTD, dairy alternatives",
@@ -24,15 +24,15 @@ const products = [
     benefits: [
       // "Improved amino acid profile",
       "High PDCAAS score",
-      "Enhance digestibility",
-      "Using patented processing",
+      "Enhanced digestibility",
+      "Produced using patented processing",
     ],
     // applications: "Nutrition, sports, functional foods",
   },
   {
     name: "Oatmilk Powder",
     type: "Non-Dairy Ingredient",
-    protein: "Variable",
+    protein: "Wide application use",
     benefits: [
       "Organic & gluten-free",
       "Adjustable sugar (<3% to >20%)",
@@ -43,10 +43,10 @@ const products = [
   {
     name: "Rice Protein SG-II",
     type: "Rice Protein",
-    protein: "Plant-based",
+    protein: "Specialty Rice Protein",
     benefits: [
       "Enhanced drinkability",
-      "Better suspension",
+      "Better suspension and solubility",
       "Allergen-friendly option",
     ],
     // applications: "Beverages, bars, snacks",
@@ -75,8 +75,8 @@ export default function ProductPreviewSection() {
             </h2>
 
             <p className="mt-3 text-sm text-muted-foreground">
-              Built for consistency, scalability, and real-world formulation
-              performance.
+              Designed for clean flavor, optimized nutrition, and scalable
+              commercial food formulation.
             </p>
           </div>
         </motion.div>
@@ -125,7 +125,7 @@ export default function ProductPreviewSection() {
     space-y-3
     text-sm
     text-muted-foreground
-    min-h-[120px]
+    min-h-[140px]
   "
                 >
                   {product.benefits.map((b) => (
