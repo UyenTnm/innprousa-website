@@ -18,13 +18,9 @@ export default function WheyReplacementSection() {
             variants={fadeUp}
             className="max-w-xl"
           >
-            {/* LABEL */}
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Whey Protein Replacement
-            </p>
-
             {/* LOGO */}
-            <div className="mb-6">
+            {/* LOGO */}
+            <div className="mb-6 flex justify-center">
               <Image
                 src="/images/pro1.png"
                 alt="Profectein"
@@ -33,6 +29,11 @@ export default function WheyReplacementSection() {
                 className="h-auto w-[200px] md:w-[240px]"
               />
             </div>
+
+            {/* LABEL */}
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+              Whey Protein Replacement
+            </p>
 
             {/* TITLE */}
             <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">

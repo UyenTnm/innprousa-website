@@ -39,7 +39,7 @@ export default function ProblemSection() {
             The Challenge
           </p>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-            Why Most Protein Plant Protein Ingredients Fall Short
+            Why Most Plant Protein Ingredients Fall Short
           </h2>
         </motion.div>
         <div className="grid gap-8 md:grid-cols-3">

@@ -74,8 +74,10 @@ lg:min-h-[70vh]
             PROFECTEIN™ Protein Platform
           </h1>
           <p className="mt-4 opacity-90">
-            High-purity, functionally engineered proteins designed for modern
-            food manufacturing.
+            High purity, functionally engineered proteins, designed for modern
+            food formulations.
+            <br />
+            One-to-one replacement for whey protein and dairy protein.
           </p>
           {/* CTA */}
           <div

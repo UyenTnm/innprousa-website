@@ -98,9 +98,11 @@ export default function HeroSection() {
                 </span>
               </div>
 
-              <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
-                Plant Protein Ingredients
-              </p>
+              <div className="rounded-full border border-[#6fa13e]/70 bg-white/90 px-4 py-2 backdrop-blur-sm">
+                <p className="text-sm font-semibold uppercase tracking-widest text-[#6fa13e]">
+                  Plant Protein Ingredients
+                </p>
+              </div>
             </div>
 
             <h1 className="mb-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">

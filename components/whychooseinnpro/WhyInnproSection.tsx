@@ -17,7 +17,7 @@ const items = [
   },
   {
     icon: Settings,
-    title: "Process, Not Commodity",
+    title: "Process, not Commodity",
     desc: "Protein performance is defined by process, and ease of formulation use.",
   },
   {

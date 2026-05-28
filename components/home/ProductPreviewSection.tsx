@@ -11,8 +11,8 @@ const products = [
     type: "Pea Protein",
     protein: "High purity",
     benefits: [
-      "Neutral taste profile",
       "One-to-one whey protein replacement",
+      "Neutral taste profile",
       "Reliable across standard formulations",
     ],
     // applications: "Beverages, RTD, dairy alternatives",

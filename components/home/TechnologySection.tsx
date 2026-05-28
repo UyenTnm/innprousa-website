@@ -71,7 +71,7 @@ export default function TechnologySection({
         {/* Advantages → FIX style */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {[
-            "One-to-One Whey Replacement",
+            "One-to-One Whey Protein Replacement",
             "Clean Sensory Profile",
             "Optimized Nutrition",
             "High Functionality",

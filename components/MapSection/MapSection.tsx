@@ -63,7 +63,7 @@ export default function MapSection() {
                 <p className="font-semibold text-foreground">Vietnam</p>
 
                 <p className="text-sm text-green-600 font-medium">
-                  Manufacturing – Vietnam Life Science LLC
+                  Manufacturing
                 </p>
 
                 <p className="text-xs text-muted-foreground mt-1">
@@ -136,11 +136,11 @@ export default function MapSection() {
           </svg>
 
           <div
-            onMouseEnter={() => {
-              if (window.innerWidth >= 768) {
-                setOpenUS(true);
-              }
-            }}
+            // onMouseEnter={() => {
+            //   if (window.innerWidth >= 768) {
+            //     setOpenUS(true);
+            //   }
+            // }}
             onClick={() => setOpenUS(true)}
             onTouchStart={() => setOpenUS(true)}
             className="
@@ -249,23 +249,69 @@ overflow-y-auto
               />
 
               {/* Dakota */}
+              {/* Dakota */}
               <div
-                className="absolute top-[39%] left-[45%]
-sm:top-[37%] sm:left-[45%] text-xs font-bold backdrop-blur-[3px]"
+                className="
+    absolute
+    top-[38%] left-[42%]
+    sm:top-[37%] sm:left-[45%]
+
+    flex items-center gap-1
+
+    rounded-full
+
+    bg-white
+    backdrop-blur-sm
+
+    px-2 py-1
+    sm:px-3 sm:py-1.5
+
+    max-w-[120px]
+    sm:max-w-none
+
+    text-[9px]
+    sm:text-xs
+
+    leading-tight
+    font-semibold
+    text-gray-800
+
+    shadow-lg
+    border border-gray-200/80
+  "
               >
                 ⭐ Dakota Dunes, SD
               </div>
 
-              {/* Austin */}
-              {/* <div className="absolute top-[50%] left-[42%] flex items-center gap-1 text-xs">
-                <span className="w-2 h-2 bg-green-600 rounded-full"></span>
-                <span>Austin (R&D)</span>
-              </div> */}
-
               {/* St Paul */}
               <div
-                className="absolute top-[32%] left-[56%]
-sm:top-[28%] sm:left-[55%] flex items-center gap-1 text-xs font-bold backdrop-blur-[3px]"
+                className="absolute
+    top-[30%] left-[54%]
+    sm:top-[27%] sm:left-[55%]
+
+    flex items-center gap-1
+
+    rounded-full
+
+    bg-white
+    backdrop-blur-sm
+
+    px-2 py-1
+    sm:px-3 sm:py-1.5
+
+    max-w-[120px]
+    sm:max-w-none
+
+    text-[9px]
+    sm:text-xs
+
+    leading-tight
+    font-semibold
+    text-gray-800
+
+    shadow-lg
+    border border-gray-200/80
+  "
               >
                 <span className="w-2 h-2 bg-green-600 rounded-full"></span>
                 St. Paul, MN
@@ -273,17 +319,70 @@ sm:top-[28%] sm:left-[55%] flex items-center gap-1 text-xs font-bold backdrop-bl
 
               {/* Mooresville */}
               <div
-                className="absolute top-[44%] left-[69%]
-sm:top-[44%] sm:left-[69%] flex items-center gap-1 text-xs font-bold backdrop-blur-[3px]"
+                className="
+    absolute
+    top-[44%] left-[69%]
+    sm:top-[44%] sm:left-[69%]
+
+    flex items-center gap-1
+
+    rounded-full
+
+    bg-white
+    backdrop-blur-sm
+
+    px-2 py-1
+    sm:px-3 sm:py-1.5
+
+    max-w-[120px]
+    sm:max-w-none
+
+    text-[9px]
+    sm:text-xs
+
+    leading-tight
+    font-semibold
+    text-gray-800
+
+    shadow-lg
+    border border-gray-200/80
+  "
               >
                 <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
                 <span>Mooresville, IN</span>
               </div>
+
               {/* Fosston, MN
                */}
               <div
-                className="absolute top-[23%] left-[55%]
-    sm:top-[17%] sm:left-[54%] flex items-center gap-1 text-xs font-bold backdrop-blur-[3px]"
+                className="
+    absolute
+    top-[23%] left-[52%]
+    sm:top-[17%] sm:left-[54%]
+
+    flex items-center gap-1
+
+    rounded-full
+
+    bg-white
+    backdrop-blur-sm
+
+    px-2 py-1
+    sm:px-3 sm:py-1.5
+
+    max-w-[120px]
+    sm:max-w-none
+
+    text-[9px]
+    sm:text-xs
+
+    leading-tight
+    font-semibold
+    text-gray-800
+
+    shadow-lg
+    border border-gray-200/80
+  "
               >
                 <span className="w-2 h-2 bg-green-600 rounded-full"></span>
                 <span>Fosston, MN</span>

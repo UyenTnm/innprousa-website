@@ -9,10 +9,10 @@ import { Button } from "@/components/ui/button";
 
 const certifications = [
   "GFSI Certified",
-  "ISO 22000 Certified",
-  "Full Traceability",
   "Allergen-Free Facility",
+  "ISO 22000 Certified",
   "Halal & Kosher Certified",
+  "Full Traceability",
   "Organic Certified",
 ];
 

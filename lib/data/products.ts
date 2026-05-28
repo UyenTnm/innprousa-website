@@ -32,14 +32,16 @@ export const products: Product[] = [
     ],
     applications: [
       "Extrusion",
+      "Whey protein replacement",
+
+      "Dairy protein replacement",
+
       "Meal replacements",
       "Ready-to-Drink",
       "Ready-to-Mix",
       "Protein beverages",
       "Sports nutrition",
       "Non-dairy (milk, yogurt, ice cream)",
-      "Dairy protein replacement",
-      "Whey protein replacement",
     ],
     image: "/images/products/profectein1-0.webp",
   },
@@ -64,11 +66,13 @@ export const products: Product[] = [
     ],
     applications: [
       "Extrusion",
+      "Whey protein replacement",
+
+      "Dairy protein replacement",
+
       "Meal replacements",
       "Ready-to-Drink",
       "Ready-to-Mix",
-      "Dairy protein replacement",
-      "Whey protein replacement",
       "Protein beverages",
       "Sports nutrition",
       "Non-dairy (milk, yogurt, ice cream)",
@@ -88,13 +92,15 @@ export const products: Product[] = [
       { text: "Suitable for allergen-sensitive formulations" },
     ],
     applications: [
+      "Extrusion",
+
+      "Ready-To-Mix",
+
       "Ready-To-Drink Beverages",
       "Protein Drinks",
       "Health Bars",
       "Snack Foods",
       "Beverages",
-      "Ready-To-Mix",
-      "Extrusion",
     ],
     image: "/images/products/riceImage.webp",
   },

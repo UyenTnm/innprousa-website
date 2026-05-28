@@ -101,9 +101,8 @@ const Index = () => {
               Accelerate Your Next Food Innovation
             </h2>
             <p className="mb-8 text-lg text-primary-foreground/80">
-              Connect with InnPro’s technical team to explore scalable plant
-              protein solutions engineered for modern food and beverage
-              formulation.
+              Get samples, specifications, and direct support from our technical
+              experts to accelerate your product development.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="lg" asChild>
